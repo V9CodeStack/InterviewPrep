@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.app-container {
+  background-color: black;
+  height: 100vh;
+}
+
+.responsive-container {
+  width: 100%;
+}
+
+.app-body {
+  width: 100%;
+}
