@@ -249,6 +249,77 @@ console.log(z); // logs 6
     code: ``,
     video: `https://www.youtube.com/watch?v=NQadrCcpQKw`,
   },
+  /* **** question 13 **** */
+  {
+    id: 13,
+    question: `13. What is the difference between a callback function and a promise in JavaScript?`,
+    answer: [
+      `In JavaScript, a callback function is a function that is passed as an argument to another function and is executed when the other function completes its task. A promise, on the other hand, is an object that represents a value that may not be available yet, but will be resolved in the future. The main differences between a callback function and a promise are:`,
+      `Error handling: In a callback function, error handling is typically done by passing an error object to the callback function. In a promise, errors are handled using the .catch() method, which allows you to handle any errors that occur during the promise chain.`,
+      `Chaining: Promises can be chained together, making it easy to perform a series of asynchronous tasks in a specific order. Callback functions, however, can be more difficult to chain together.`,
+      `Readability: Promises are often considered to be more readable than nested callbacks, because they allow you to write asynchronous code in a way that looks similar to synchronous code.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 14 **** */
+  {
+    id: 14,
+    question: `14. Explain the concept of "this" in JavaScript.?`,
+    answer: [
+      `The value of "this" depends on how the function is called.`,
+      `When a function is called in the global scope, "this" refers to the global object, which is typically the window object in a web browser. However, when a function is called as a method of an object, "this" refers to the object itself.`,
+    ],
+    code: ``,
+    video: `https://www.youtube.com/watch?v=2fhrSd0ctBc`,
+  },
+  /* **** question 15 **** */
+  {
+    id: 15,
+    question: `15. What is the difference between the "for" loop and the "for...in" loop in JavaScript?`,
+    answer: [
+      `The for loop uses a counter variable to iterate over the elements of an array, while the for...in loop uses a property name to iterate over the properties of an object.`,
+      `In general, it's recommended to use the for loop for iterating over arrays and the for...in loop for iterating over the properties of an object. However, it's important to be aware of the differences between the two and choose the appropriate loop depending on the context.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 16 **** */
+  {
+    id: 16,
+    question: `16. What is a JavaScript event loop, and how does it work?`,
+    answer: [
+      `The JavaScript event loop is a mechanism that allows JavaScript to handle asynchronous events such as user input, network requests, and timers. It is responsible for handling the execution of JavaScript code and managing the order in which events are processed.`,
+      `At a high level, the event loop works by continuously checking a queue of events and executing any pending events in the queue. When an event occurs, it is added to the end of the queue. When the JavaScript engine is idle, the event loop will take the first event in the queue and execute its associated callback function. Once the function has completed, the event loop will move on to the next event in the queue, if there is one.`,
+      `One important feature of the event loop is that it operates on a single thread. This means that only one task can be executed at a time, and long-running tasks can block the thread and cause the UI to freeze. To avoid this, developers can use asynchronous programming techniques such as callbacks, promises, and async/await to schedule tasks and allow the event loop to continue processing events.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 17 **** */
+  {
+    id: 17,
+    question: `17. What is a higher-order function in JavaScript? Provide an example.?`,
+    answer: [
+      `In JavaScript, a higher-order function is a function that takes one or more functions as arguments, or returns a function as its result. Higher-order functions are a powerful and flexible feature of the language, and can be used to create abstractions, compose functions, and implement many common programming patterns.`,
+    ],
+    code: `function mapArray(arr, fn) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(fn(arr[i]));
+  }
+  return result;
+}
+
+const numbers = [1, 2, 3, 4];
+const squares = mapArray(numbers, function(num) {
+  return num * num;
+});
+
+console.log(squares); // Output: [1, 4, 9, 16]
+`,
+    video: `https://www.youtube.com/watch?v=YbiwZXenseU`,
+  },
 ];
 
 const ObjBluePrint = {
@@ -258,6 +329,7 @@ const ObjBluePrint = {
   code: ``,
   video: ``,
 };
+
 class JavaScript extends Component {
   state = { sortingFlag: true };
 
