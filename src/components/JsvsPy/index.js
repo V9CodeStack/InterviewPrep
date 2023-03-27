@@ -120,6 +120,57 @@ def flatternArry(arr):
 print(flatternArry(arr)) // Output: [13, 12, 7, 4, 10, 11, 9, 6]
 `,
   },
+  /* **** question 6 **** */
+  {
+    id: 6,
+    question: `6. Implement a function to find the maximum subarray sum in an array of integers.?`,
+    javaScriptCode: `/** JavaScript **/
+const arr = [1, 2, 3, 4, -10];
+
+function maximunSubArraySum(arr) {
+  let arrySum = [];
+  for (let i = 0; i <= arr.length; i++) {
+    for (let j = 1; j <= arr.length; j++) {
+      if (j > 1) {
+        let sum = 0;
+        for (let k of arr.slice(i, j)) {
+          sum = sum + k;
+        }
+        arrySum.push(sum);
+      }
+    }
+  }
+  return arrySum.sort((a, b) => b - a)[0];
+}
+
+console.log(maximunSubArraySum(arr)); // Output: 10`,
+    pythonCode: ``,
+  },
+  /* **** question 7 **** */
+  {
+    id: 7,
+    question: `7. Write a function that takes a string as input and returns the first non-repeating character.?`,
+    javaScriptCode: `/** JavaScript **/
+const str = "javascript";
+const charCount = {};
+for (let i = 0; i < str.length; i++) {
+  charCount[str[i]] = charCount[str[i]] ? charCount[str[i]] + 1 : 1;
+}
+console.log(charCount);
+
+// Find first non-repeating character
+for (j in charCount) {
+  if (charCount[j] === 1) {
+    console.log(j);
+    break;
+  }
+}
+
+// Output: { j: 1, a: 2, v: 1, s: 1, c: 1, r: 1, i: 1, p: 1, t: 1 }
+// Output: j
+`,
+    pythonCode: ``,
+  },
 ];
 
 const ObjBluePrint = {
