@@ -442,6 +442,34 @@ for i in range(len(arr)):
 print(largestProduct) // Output: 63
 `,
   },
+  /* **** question 18 **** */
+  {
+    id: 18,
+    question: `18. Implement a function that takes a string as input and returns the length of the longest substring without repeating characters.?`,
+    javaScriptCode: `/** JavaScript **/
+str = "abcabcbb";
+
+function lengthOfLongestSubstring(str) {
+  let maxLength = 0;
+  let currentSubstr = "";
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    let charIndex = currentSubstr.indexOf(char);
+
+    if (charIndex !== -1) {
+      currentSubstr = currentSubstr.slice(charIndex + 1);
+    } else {
+      currentSubstr += char;
+      maxLength = Math.max(maxLength, currentSubstr.length);
+    }
+  }
+  return maxLength;
+}
+
+console.log(lengthOfLongestSubstring(str));  //Output: 3`,
+    pythonCode: ``,
+  },
 ];
 
 const ObjBluePrint = {

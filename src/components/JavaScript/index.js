@@ -320,6 +320,76 @@ console.log(squares); // Output: [1, 4, 9, 16]
 `,
     video: `https://www.youtube.com/watch?v=YbiwZXenseU`,
   },
+  /* **** question 18 **** */
+  {
+    id: 18,
+    question: `18. Explain the difference between slice() and splice() methods in JavaScript. ?`,
+    answer: [
+      `slice() is used to create a new array containing a subset of the elements from the original array, while splice() is used to modify the original array by adding or removing elements from it.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 19 **** */
+  {
+    id: 19,
+    question: `19. How would you explain the concept of "scope" in JavaScript? `,
+    answer: [
+      `Global Scope: Variables and functions that are defined outside of any function or block have global scope. They can be accessed from anywhere in the code.`,
+      `Local Scope: Variables and functions that are defined inside a function or block have local scope. They can only be accessed from within the function or block where they are defined.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 20 **** */
+  {
+    id: 20,
+    question: `20. Explain the concept of "prototypal inheritance" in JavaScript.?`,
+    answer: [``],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 21 **** */
+  {
+    id: 21,
+    question: `21. How would you implement a debounce function in JavaScript?.?`,
+    answer: [``],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 22 **** */
+  {
+    id: 22,
+    question: `22. What is the difference between "localStorage" and "sessionStorage" in JavaScript ?`,
+    answer: [
+      `The main difference between localStorage and sessionStorage is that localStorage persists data even when the browser is closed and reopened, while sessionStorage only stores data for a single session (i.e., until the browser is closed). This means that data stored in localStorage can be accessed across different tabs and windows of the same browser, while data stored in sessionStorage is only accessible within the same tab or window that created it.`,
+      `Data stored in localStorage does not expire, while data stored in sessionStorage is cleared when the session ends (i.e., when the tab or window is closed).`,
+      `localStorage has no specific storage limit (although browsers may set their own limits), while sessionStorage has a storage limit of around 5-10 MB.`,
+      `localStorage data is available across all windows and tabs from the same origin, while sessionStorage data is only available within the same window/tab from the same origin.`,
+    ],
+    code: `localStorage.setItem('key', 'value');
+    const value = localStorage.getItem('key');
+    localStorage.removeItem('key');
+    `,
+    video: ``,
+  },
+  /* **** question 23 **** */
+  {
+    id: 23,
+    question: `23. What is the difference between "async" and "defer" attributes in JavaScript script tags?`,
+    answer: [
+      `The async and defer attributes are used in script tags in HTML to control how JavaScript files are loaded and executed. The main difference between these attributes is when the JavaScript code is executed in relation to the rest of the page content.`,
+      `The async attribute tells the browser to download the script file asynchronously while continuing to parse the HTML document. This means that the script file is downloaded in the background, and the browser does not wait for the file to be fully downloaded before continuing to parse and render the page. When the file is downloaded, it is executed immediately, regardless of whether the page has finished loading or not. This is useful for scripts that do not depend on the rest of the page content, such as tracking or analytics scripts.`,
+      `The defer attribute, on the other hand, tells the browser to download the script file in the background while continuing to parse the HTML document. However, unlike the async attribute, the defer attribute does not execute the script file until the HTML document has finished parsing. This ensures that the script does not interfere with the rendering of the page and is executed in the order in which it appears in the HTML document. This is useful for scripts that need to interact with the page content or depend on other scripts that have been loaded.`,
+      `In summary, the async attribute loads and executes the script file asynchronously and does not wait for the page to finish loading, while the defer attribute loads the script file asynchronously but defers execution until the HTML document has finished parsing.`,
+    ],
+    code: `<!-- Load script asynchronously -->
+<script async src="script.js"></script>
+
+<!-- Load script deferred -->
+<script defer src="script.js"></script>`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {
