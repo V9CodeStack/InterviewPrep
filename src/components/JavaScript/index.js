@@ -390,6 +390,107 @@ console.log(squares); // Output: [1, 4, 9, 16]
 <script defer src="script.js"></script>`,
     video: ``,
   },
+  /* **** question 24 **** */
+  {
+    id: 25,
+    question: `25. Explain the difference between setTimeout() and setInterval() in JavaScript.?`,
+    answer: [
+      `setTimeout() is used to execute a piece of code once after a specified amount of time has elapsed. `,
+      `setInterval(), on the other hand, is used to execute a piece of code repeatedly at a specified interval of time.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 25 **** */
+  {
+    id: 25,
+    question: `26. What is the purpose of the fetch() method in JavaScript? Provide an example.?`,
+    answer: [
+      `The fetch() method in JavaScript is used to make network requests and retrieve resources from a server using HTTP or HTTPS. It returns a Promise that resolves to the response from the server.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 26 **** */
+  {
+    id: 26,
+    question: `26. How would you implement inheritance in JavaScript?`,
+    answer: [
+      `Inheritance in JavaScript refers to the ability of an object to inherit properties and methods from another object. It is implemented using the prototype chain, where objects can have a prototype object that they inherit properties and methods from. Inheritance is an important concept in object-oriented programming as it allows for code reuse and promotes modular and efficient code. In JavaScript, inheritance can be achieved using a combination of object constructors, the prototype property, and the Object.create() method.`,
+    ],
+    code: `class Person {
+  constructor(name, phone) {
+    this.name = name;
+    this.phone = phone;
+  }
+
+  getPersonalDetails() {
+    console.log("personal details");
+  }
+}
+
+class Employee extends Person {
+  constructor(name, phone, salary, company) {
+    super(name, phone);
+    this.salary = salary;
+    this.company = company;
+  }
+}
+
+p1 = new Person("abc", 424626362);
+
+e1 = Employee("cdb", 323872323, 4600, "Amazon");`,
+    video: `https://www.youtube.com/watch?v=rponDyXJL4s`,
+  },
+  /* **** question 27 **** */
+  {
+    id: 27,
+    question: `27. What is the difference between "primitive" and "reference" types in JavaScript?`,
+    answer: [
+      `Primitive types include:
+
+    Numbers,
+    Strings,
+    Booleans,
+    Undefined,
+    Null,
+    Symbols (new in ES6),
+    
+    These types are immutable, which means that their values cannot be changed once they are created.`,
+      `reference types include:
+
+Objects,
+Arrays,
+Functions,
+These types are mutable, which means that their values can be changed after they are created. When a variable holds a reference type, it actually holds a reference to a location in memory where the object is stored. When you assign a reference type to another variable, you are creating a new reference to the same object in memory.`,
+    ],
+    code: `var x = 5;
+var y = x;
+y = 6;
+console.log(x); // Output: 5
+console.log(y); // Output: 6
+
+var arr1 = [1, 2, 3];
+var arr2 = arr1;
+arr2.push(4);
+console.log(arr1); // Output: [1, 2, 3, 4]
+console.log(arr2); // Output: [1, 2, 3, 4]
+`,
+    video: ``,
+  },
+  /* **** question 28 **** */
+  {
+    id: 28,
+    question: `28. How would you explain the concept of "asynchronous programming" in JavaScript?`,
+    answer: [
+      `Asynchronous programming is a programming paradigm that allows multiple tasks to be executed concurrently, without blocking the execution of the main program. In JavaScript, asynchronous programming is achieved through the use of callbacks, promises, and async/await functions.`,
+      `In traditional synchronous programming, each task is executed sequentially, one after the other. If a task takes a long time to complete, it can block the execution of the entire program, making it unresponsive.`,
+      `Asynchronous programming allows tasks to be executed in the background, without blocking the main program. This allows for better responsiveness and smoother user experience. For example, when a webpage is loading data from a server, asynchronous programming allows the page to continue to respond to user input, even while the data is being fetched.`,
+      "Callbacks, promises, and async/await functions are all mechanisms that allow JavaScript developers to write asynchronous code in a more readable and maintainable way. By using these mechanisms, developers can avoid nested callbacks and manage the flow of asynchronous code more easily.",
+    ],
+    code: ``,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {

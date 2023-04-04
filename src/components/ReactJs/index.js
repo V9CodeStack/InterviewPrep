@@ -17,6 +17,73 @@ const reactjsobj = [
     code: ``,
     video: ``,
   },
+  /* **** question 2 **** */
+  {
+    id: 2,
+    question: `2. What are the lifecycle methods of React?`,
+    answer: [
+      `componentDidMount(): This method is called after the component is mounted (rendered) on the DOM. It is a good place to initialize data that requires DOM nodes, such as making an API call to fetch data.`,
+      `componentDidUpdate(prevProps, prevState): This method is called after the component is updated, either from a change in props or state. It is a good place to update the component's data, such as making another API call to fetch new data.`,
+      `componentWillUnmount(): This method is called just before the component is removed from the DOM. It is a good place to clean up any resources used by the component, such as cancelling timers or removing event listeners.`,
+      `shouldComponentUpdate(nextProps, nextState)`,
+      `getDerivedStateFromProps(props, state)`,
+      `getSnapshotBeforeUpdate(prevProps, prevState)`,
+      `componentDidCatch(error, info)`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 3 **** */
+  {
+    id: 3,
+    question: `3. What is the Virtual DOM in React and how does it improve performance?`,
+    answer: [
+      `When a change occurs, React first updates the Virtual DOM and then compares it to the previous version of the Virtual DOM to find the minimal set of changes required to update the actual DOM. This process is known as "reconciliation."`,
+      `By using the Virtual DOM, React reduces the number of direct manipulations to the actual DOM, which can be slow and expensive. Updating the Virtual DOM is fast and lightweight because it only updates the parts of the UI that have changed. Additionally, by finding the minimal set of changes required, React minimizes the number of operations needed to update the actual DOM.`,
+      `Overall, the Virtual DOM helps to improve performance by reducing the amount of work required to update the UI, resulting in faster and smoother rendering of React components.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 4 **** */
+  {
+    id: 4,
+    question: `4. What are Higher-Order Components (HOCs) in React?`,
+    answer: [
+      `Higher-Order Components (HOCs) are a pattern in React that allows developers to reuse component logic across multiple components. HOCs are functions that take a component as an argument and return a new component with additional functionality.`,
+      `The basic idea behind HOCs is to separate concerns between components, such as rendering UI and fetching data. For example, a component might need to fetch data from an API and render it. Instead of putting both of these concerns in one component, we can use an HOC to handle the data fetching and return a new component that renders the data.`,
+      `HOCs are often used for cross-cutting concerns, such as authentication, logging, or data fetching. By wrapping a component with an HOC, we can add these features to multiple components without duplicating code.`,
+      `HOCs are a powerful pattern in React, but they can also make the component hierarchy more complex and introduce additional layers of abstraction. It is important to use them judiciously and only when necessary.`,
+    ],
+    code: `/** App.js **/
+import React from "react";
+import Hoc from "./Hoc";
+
+const App = (props) => {
+  return <h1>Welcome User !! {props.name}</h1>;
+};
+export default Hoc(App);
+
+
+/** Hoc.js **/
+import { Component } from "react";
+
+const Hoc = (Component) => {
+  return class extends Component {
+    state = { auth: true };
+
+    render() {
+      return (
+        <div>
+          {this.state.auth ? <Component name="name" /> : <h1>Please Login</h1>}
+        </div>
+      );
+    }
+  };
+};
+`,
+    video: `https://www.youtube.com/watch?v=y6S7j6ny6AQ`,
+  },
 ];
 
 const ObjBluePrint = {
@@ -26,6 +93,7 @@ const ObjBluePrint = {
   code: ``,
   video: ``,
 };
+
 class ReactJs extends Component {
   state = { sortingFlag: true };
 

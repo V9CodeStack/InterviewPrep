@@ -470,6 +470,18 @@ function lengthOfLongestSubstring(str) {
 console.log(lengthOfLongestSubstring(str));  //Output: 3`,
     pythonCode: ``,
   },
+  /* **** question 19 **** */
+  {
+    id: 19,
+    question: `19. Find the maximum value using Reduce method?`,
+    javaScriptCode: `/** JavaScript **/
+const arr = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const result = arr.reduce((acc, cur) => (cur > acc ? cur : acc));
+console.log(result); //3000
+`,
+    pythonCode: ``,
+  },
 ];
 
 const ObjBluePrint = {
