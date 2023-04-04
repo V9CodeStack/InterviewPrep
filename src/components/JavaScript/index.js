@@ -491,6 +491,58 @@ console.log(arr2); // Output: [1, 2, 3, 4]
     code: ``,
     video: ``,
   },
+  /* **** question 29 **** */
+  {
+    id: 29,
+    question: `29. Explain the difference between a "callback", "promise" and "Async/Await" in JavaScript.?`,
+    answer: [
+      `In JavaScript, a "callback" is a function that is passed as an argument to another function and is invoked inside that function. The purpose of a callback is to allow asynchronous operations to be executed in a specific order. When an asynchronous operation is completed, the callback function is invoked to handle the result.`,
+      `A "promise" is an object that represents the eventual completion or failure of an asynchronous operation and its resulting value. Promises are used to manage asynchronous operations and to handle their results when they are completed. They provide a more structured way to handle asynchronous code compared to callbacks. Promises have three states: "pending", "fulfilled", or "rejected".`,
+      `Async/Await is a newer syntax for dealing with Promises. Async/Await is a way of writing asynchronous code that looks more like synchronous code. It makes asynchronous code easier to read and write.`,
+      `Callbacks can lead to "callback hell", a situation where multiple nested callbacks make the code hard to read and maintain. Promises and Async/Await, on the other hand, provide a cleaner and more organized way to handle asynchronous operations, making the code easier to read and maintain. Additionally, promises have additional features such as chaining and error handling, which makes them more powerful than callbacks.`,
+    ],
+    code: `/** Callbacks **/
+function getData(callback) {
+  setTimeout(() => {
+    callback('Data from server')
+  }, 2000)
+}
+function displayData(data) {
+  console.log(data)
+}
+getData(displayData) // Output: Data from server
+
+
+/** Promises **/
+function getData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Data from server')
+    }, 2000)
+  })
+}
+getData()
+  .then(data => {
+    console.log(data)
+  })
+  .catch(error => {
+    console.log(error)
+  })
+
+
+/** Async/Await **/
+async function getData() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+    const data = await response.json()
+    console.log(data)
+  } catch (error) {
+    console.log(error)
+  }
+}
+getData()`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {

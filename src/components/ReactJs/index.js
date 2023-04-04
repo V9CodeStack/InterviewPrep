@@ -84,6 +84,52 @@ const Hoc = (Component) => {
 `,
     video: `https://www.youtube.com/watch?v=y6S7j6ny6AQ`,
   },
+  /* **** question 5 **** */
+  {
+    id: 5,
+    question: `5. What is Redux and why is it used in React?`,
+    answer: [
+      `Redux is a state management library for JavaScript applications. It provides a predictable state container to manage the state of an application in a centralized manner, making it easier to reason about changes to the state and allowing for easier debugging and testing.`,
+      `Redux is commonly used in React applications to manage the state of components across the application. Since React is a component-based library, data can be passed between components using props. However, when the application grows in size and complexity, it can become difficult to manage the state of components across the application. Redux simplifies this process by providing a centralized store where the state of the entire application can be managed.`,
+      `In summary, Redux is used in React to manage the state of an application in a predictable, centralized, and efficient manner, which can help improve the overall performance and maintainability of the application.`,
+    ],
+    code: ``,
+    video: `https://www.youtube.com/watch?v=Or2_k1bMYfI`,
+  },
+  /* **** question 5 **** */
+  {
+    id: 6,
+    question: `6. Explain the concept of React Hooks.?`,
+    answer: [
+      `React Hooks are a feature introduced in React 16.8 that allows developers to use state and other React features in functional components. Prior to Hooks, state and other React features were only available in class components.`,
+      `Hooks are functions that allow you to "hook into" React state and lifecycle features from functional components. There are several built-in Hooks in React, including useState(), useEffect(), useContext(), and many more.`,
+      `The most commonly used Hook is useState(), which allows functional components to use state. useState() returns an array with two values: the current state and a function to update the state. By using this Hook, functional components can now manage state, and re-render when the state changes.`,
+      `The useEffect() Hook is used to handle side effects in functional components, such as fetching data from an API or setting up event listeners. It allows functional components to manage their lifecycle events, such as component did mount and component did update.`,
+      `Overall, Hooks provide a simpler and more consistent way to reuse logic and manage state in functional components. They allow functional components to have the same features and capabilities as class components, making them more powerful and flexible.`,
+      `useState - Allows you to add state to functional components`,
+      `useEffect - Allows you to run a function after the component has rendered`,
+      `useContext - Allows you to use a context in your component`,
+      `useReducer - Allows you to manage more complex state in your component`,
+      `useCallback - Allows you to memoize functions so they don't have to be re-created on every render`,
+      `useMemo - Allows you to memoize the result of a function so it doesn't have to be re-computed on every render`,
+    ],
+    code: `import React, { useState } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {
