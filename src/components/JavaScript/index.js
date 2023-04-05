@@ -543,6 +543,153 @@ async function getData() {
 getData()`,
     video: ``,
   },
+  /* **** question 30 **** */
+  {
+    id: 30,
+    question: `30. What is the purpose of the bind() method in JavaScript? Provide an example.`,
+    answer: [``, ``, ``],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 31 **** */
+  {
+    id: 31,
+    question: `31. What is the difference between "event bubbling" and "event capturing" in JavaScript?`,
+    answer: [
+      `Event capturing and event bubbling are two different phases in the event propagation process. Event capturing starts from the top-most element in the DOM hierarchy and moves down to the target element, while event bubbling starts from the target element and moves up to the top-most element.`,
+      `On the other hand, event delegation is a technique in which a parent element listens to events that occur on its child elements. This is often used to improve performance and simplify code, especially when dealing with dynamically generated elements or a large number of similar elements.`,
+      `In event delegation, you add an event listener to a parent element and use the event.target property to determine which child element was the actual target of the event. This allows you to handle events on many child elements with a single event listener on the parent element, rather than adding a separate event listener to each child element.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 32 **** */
+  {
+    id: 32,
+    question: `32. How would you explain the concept of "callbacks hell" in JavaScript?`,
+    answer: [
+      `Callback hell is a situation where there are too many nested callbacks in asynchronous JavaScript code, making it difficult to read, maintain, and debug. This happens when a function requires the result of another function, and that function requires the result of yet another function, and so on. As a result, the code becomes deeply nested, making it difficult to read and debug. This can lead to bugs and errors that are hard to trace and fix.`,
+    ],
+    code: `getUserData(function(userData) {
+  getProfile(userData, function(profileData) {
+    getFriends(profileData, function(friendsData) {
+      // do something with friendsData
+    });
+  });
+});
+`,
+    video: ``,
+  },
+  /* **** question 33 **** */
+  {
+    id: 33,
+    question: `33. Explain the difference between a "shallow copy" and a "deep copy" in JavaScript.?`,
+    answer: [
+      `In JavaScript, objects and arrays are reference types, which means that when we create a new variable and assign it to an object or array, the new variable actually references the original object or array.`,
+      `A shallow copy means that only the first level of the object or array is copied. If the object or array contains other objects or arrays, those nested objects or arrays are still references to the original ones. So any changes made to the nested objects or arrays in the original will also affect the copied object or array.`,
+      `A deep copy, on the other hand, means that the entire object or array is copied, including all nested objects or arrays. So any changes made to the original object or array will not affect the copied one.`,
+    ],
+    code: `/**** Shallow copy ****/
+const original = { name: 'John', hobbies: ['reading', 'cooking'] };
+
+const shallowCopy = Object.assign({}, original);
+
+console.log(shallowCopy); // { name: 'John', hobbies: ['reading', 'cooking'] }
+
+original.name = 'Jane';
+original.hobbies.push('painting');
+
+console.log(original); // { name: 'Jane', hobbies: ['reading', 'cooking', 'painting'] }
+console.log(shallowCopy); // { name: 'John', hobbies: ['reading', 'cooking', 'painting'] }
+
+
+/**** Deep copy ****/
+const original = { name: 'John', hobbies: ['reading', 'cooking'] };
+
+const deepCopy = JSON.parse(JSON.stringify(original));
+
+console.log(deepCopy); // { name: 'John', hobbies: ['reading', 'cooking'] }
+
+original.name = 'Jane';
+original.hobbies.push('painting');
+
+console.log(original); // { name: 'Jane', hobbies: ['reading', 'cooking', 'painting'] }
+console.log(deepCopy); // { name: 'John', hobbies: ['reading', 'cooking'] }`,
+    video: ``,
+  },
+  /* **** question 34 **** */
+  {
+    id: 34,
+    question: `34. Explain the purpose of the "use strict" directive in JavaScript.?`,
+    answer: [
+      `It prevents the use of undeclared variables by throwing an error when an undeclared variable is used.`,
+      `It disallows duplicate parameter names in function definitions.`,
+      `It makes it impossible to assign values to read-only properties and global objects.`,
+      `It disallows the use of some reserved keywords as variable names, such as "eval" and "arguments".`,
+      `In short, the "use strict" directive helps to ensure that your JavaScript code is executed in a more secure and reliable way, by enforcing a stricter set of rules.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 35 **** */
+  {
+    id: 35,
+    question: `35. What is the difference between "bind", "call", and "apply" methods in JavaScript?`,
+    answer: [
+      `In JavaScript, bind(), call(), and apply() are methods that allow you to change the this keyword inside a function.`,
+      `bind() creates a new function with the same body as the original function but with a different this value, and returns that function without calling it. This can be useful for creating a function with a fixed this value that you can pass around as a callback.`,
+      `call() and apply() both call the function immediately with a specified this value, and can also pass arguments to the function. The difference between call() and apply() is in how they pass arguments. call() accepts an argument list, while apply() accepts an array of arguments.`,
+    ],
+    code: `const person = {
+  name: 'John',
+  sayHi: function(greeting) {
+    console.log({greeting}, my name is {this.name});
+  }
+};
+
+const otherPerson = {
+  name: 'Jane'
+};
+
+// using call()
+person.sayHi.call(otherPerson, 'Hello');
+// output: Hello, my name is Jane
+
+// using apply()
+person.sayHi.apply(otherPerson, ['Hi there']);
+// output: Hi there, my name is Jane
+
+// using bind()
+const greet = person.sayHi.bind(otherPerson, 'Hey');
+greet();
+// output: Hey, my name is Jane
+`,
+    video: ``,
+  },
+  /* **** question 36 **** */
+  {
+    id: 36,
+    question: `36. What is the purpose of the Array.from() method in JavaScript? Provide an example.?`,
+    answer: [
+      `The Array.from() method in JavaScript creates a new array instance from an array-like or iterable object. This method is useful when working with objects that are not actually arrays but have a similar structure, like the NodeList returned by document.querySelectorAll().`,
+    ],
+    code: `// creating an array-like object
+const arrayLike = { 0: 'a', 1: 'b', 2: 'c', length: 3 };
+
+// using Array.from() to create a new array
+const newArray = Array.from(arrayLike);
+
+console.log(newArray); // output: ['a', 'b', 'c']
+
+
+const str = 'hello';
+const newArray = Array.from(str);
+
+console.log(newArray); // output: ['h', 'e', 'l', 'l', 'o']
+
+`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {

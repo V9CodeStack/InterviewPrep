@@ -96,7 +96,7 @@ const Hoc = (Component) => {
     code: ``,
     video: `https://www.youtube.com/watch?v=Or2_k1bMYfI`,
   },
-  /* **** question 5 **** */
+  /* **** question 6 **** */
   {
     id: 6,
     question: `6. Explain the concept of React Hooks.?`,
@@ -128,6 +128,91 @@ function Example() {
   );
 }
 `,
+    video: ``,
+  },
+  /* **** question 7 **** */
+  {
+    id: 7,
+    question: `7. How does React handle events?`,
+    answer: [
+      `React handles events in a cross-browser compatible way, using a synthetic event system. This means that instead of directly handling events in the browser, React uses a virtual event system that captures and normalizes events across all browsers.`,
+      `Overall, React's event system provides a consistent and cross-browser compatible way to handle events in React components.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 8 **** */
+  {
+    id: 8,
+    question: `8. What are controlled and uncontrolled components in React?`,
+    answer: [
+      `Controlled components: Controlled components are components that are fully controlled by React. This means that the component's value is controlled by React state, and any changes to the value are handled by updating the state. In other words, the component's value is always derived from the state of the parent component, and any changes to the value are communicated to the parent component via callbacks.`,
+      `Uncontrolled components: Uncontrolled components are components that rely on the browser to handle user input. The component's value is read directly from the DOM using a ref, and changes to the value are not controlled by React state. Instead, any changes to the value are handled by the browser's default behavior.`,
+      `In summary, controlled components are fully controlled by React state, while uncontrolled components rely on the browser to handle user input. The choice between controlled and uncontrolled components depends on the specific requirements of the component and the application.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 9 **** */
+  {
+    id: 9,
+    question: `9. Explain the concept of React Router and how it is used.?`,
+    answer: [
+      `React Router is a popular routing library for React that allows you to create single-page applications with multiple views and URLs. It enables you to define routing rules that map specific URLs to specific components, allowing you to create a dynamic user interface that updates based on the URL.`,
+      `Overall, React Router provides a powerful and flexible way to manage routing in React applications, allowing you to create dynamic user interfaces that respond to changes in the URL.`,
+    ],
+    code: `import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  );
+}
+
+function Home() {
+  return <h1>Home</h1>;
+}
+
+function About() {
+  return <h1>About</h1>;
+}
+`,
+    video: ``,
+  },
+  /* **** question 10 **** */
+  {
+    id: 10,
+    question: `10. How do you optimize a React application's performance?`,
+    answer: [
+      `Use React.memo: This is a higher-order component that can be used to memoize a component, meaning that it will only re-render when its props have changed.`,
+      `Use shouldComponentUpdate: This lifecycle method can be used to optimize a component's rendering by preventing unnecessary updates. By comparing the current props and state to the previous ones, you can determine whether the component needs to be re-rendered or not.`,
+      `Use the virtual DOM effectively: The virtual DOM is one of the key features of React, and it can greatly improve performance by reducing the number of actual DOM updates. Make sure you're using it effectively by minimizing the number of DOM elements you're manipulating and using the key prop to help React identify which elements have changed.`,
+      `Use code splitting: Code splitting is a technique that involves breaking your application's code into smaller chunks that can be loaded on demand, rather than all at once. This can improve performance by reducing the amount of code that needs to be loaded and parsed initially.`,
+      `Use lazy loading: Lazy loading is a technique that involves deferring the loading of certain components until they are actually needed. This can reduce the initial load time of your application and improve performance.`,
+      `Optimize your images and other assets: Large images and other assets can slow down your application's performance. Make sure you're optimizing them for web use by compressing them and reducing their file size.`,
+      `Use server-side rendering: Server-side rendering can greatly improve the initial load time of your application by rendering the initial HTML on the server, rather than waiting for it to be generated by the client.`,
+      `Use profiling tools: React comes with a built-in profiling tool that can help you identify performance bottlenecks in your application. Use this tool to identify areas that need optimization and make targeted improvements.`,
+    ],
+    code: ``,
     video: ``,
   },
 ];

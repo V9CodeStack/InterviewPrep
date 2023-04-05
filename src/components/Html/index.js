@@ -80,6 +80,56 @@ const htmlobj = [
     code: ``,
     video: ``,
   },
+  /* **** question 7 **** */
+  {
+    id: 7,
+    question: `7. What is the difference between a GET and a POST request in HTML?`,
+    answer: [
+      `GET: A GET request is used to retrieve data from the server. When a user submits a form using GET, the form data is appended to the URL as query parameters, and the user is redirected to a new page that displays the results. GET requests are typically used for simple queries, such as searching for information or browsing a catalog.`,
+      `POST: A POST request is used to submit data to the server. When a user submits a form using POST, the form data is sent in the request body, rather than being appended to the URL. This makes POST requests more secure than GET requests, as the form data is not visible in the URL. POST requests are typically used for submitting sensitive information, such as login credentials or credit card details.`,
+      `Overall, the main difference between GET and POST requests is the way in which data is submitted to the server. GET requests are used for retrieving data, while POST requests are used for submitting data. Additionally, POST requests are more secure than GET requests, as the form data is not visible in the URL.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 8 **** */
+  {
+    id: 8,
+    question: `8. What is HTML5, and what are its new features?`,
+    answer: [
+      `Improved multimedia support: HTML5 introduced the <audio> and <video> tags, which make it easy to embed multimedia content (such as audio and video) in web pages without relying on third-party plugins like Flash.`,
+      `Canvas element: HTML5 introduced the <canvas> tag, which allows developers to create dynamic graphics and animations directly in the browser, without the need for third-party plugins.`,
+      `Geolocation: HTML5 introduced the Geolocation API, which allows web applications to access a user's location information (with their permission). This can be useful for location-based services and applications.`,
+      `Local storage: HTML5 introduced a new mechanism for storing data on the client side, called local storage. This allows web applications to store data locally on the user's device, even after the browser is closed.`,
+      `Responsive design: HTML5 introduced new features that make it easier to create responsive web designs that can adapt to different screen sizes and devices, such as the <picture> and <source> tags for responsive images, and the <input type="range"> tag for creating sliders and other interactive elements.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 9 **** */
+  {
+    id: 9,
+    question: `9. What is the role of meta tags in HTML?`,
+    answer: [
+      `the role of meta tags in HTML is to provide information about a web page that is useful to search engines, browsers, and other web services. By including relevant and accurate meta tags in an HTML document, web developers can improve the visibility and usability of their web pages.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 10 **** */
+  {
+    id: 10,
+    question: `10. What is the difference between HTML and HTML5 forms?`,
+    answer: [
+      `New form elements: HTML5 introduced several new form elements such as <input type="date">, <input type="email">, <input type="url">, <input type="tel">, <input type="search">, <input type="range">, <input type="color">, <input type="datetime-local">, <input type="month">, <input type="week">, <input type="time">, <input type="datetime">, <input type="number">, and <input type="file">. These new elements provide more options for users to enter data and make it easier to validate and process the data on the server.`,
+      `Placeholder and pattern attributes: HTML5 introduced the "placeholder" and "pattern" attributes for form elements. The "placeholder" attribute allows you to specify text that appears inside a form field until the user enters data, while the "pattern" attribute lets you specify a regular expression pattern that the entered data must match.`,
+      `Validation: HTML5 introduced built-in form validation, which allows you to specify validation rules using attributes such as "required", "min", "max", "step", and "pattern". This makes it easier to validate user input without requiring JavaScript code.`,
+      `New form attributes: HTML5 introduced several new form attributes such as "autocomplete", "autofocus", "novalidate", and "formtarget". These attributes provide more control over how form data is submitted and processed.`,
+      `Support for new input types: HTML5 introduced support for new input types such as "color", "date", "datetime-local", "email", "month", "number", "range", "search", "tel", "time", "url", "week", and "file". These input types make it easier to enter and validate certain types of data.`,
+    ],
+    code: ``,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {
