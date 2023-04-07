@@ -215,6 +215,19 @@ function About() {
     code: ``,
     video: ``,
   },
+  /* **** question 11 **** */
+  {
+    id: 11,
+    question: `11. what is pure component in React ?`,
+    answer: [
+      `In React, a pure component is a component that doesn't depend on any state or props other than those passed to it. A pure component is only re-rendered when the props passed to it change.`,
+      `To create a pure component in React, you can either use the React.PureComponent class or write a custom component that extends React.Component and implements the shouldComponentUpdate() lifecycle method.`,
+      `The shouldComponentUpdate() method is used to determine if a component should be updated or not. By default, it returns true which means that the component will always update when its props or state change. However, you can override this method to provide your own implementation that determines when the component should update based on its props and state.`,
+      `Using pure components can improve performance in React by reducing the number of unnecessary re-renders, especially in large and complex applications.`,
+    ],
+    code: ``,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {

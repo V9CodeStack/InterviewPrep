@@ -733,6 +733,25 @@ console.log(newArray); // output: ['h', 'e', 'l', 'l', 'o']
     code: ``,
     video: ``,
   },
+  /* **** question 39 **** */
+  {
+    id: 39,
+    question: `39. what are the ES6 features ?`,
+    answer: [
+      `1. let and const keywords for block-scoped variables
+2. Arrow functions for concise function syntax
+3. Template literals for easier string interpolation
+4. Classes for defining object blueprints
+5. Enhanced object literals for simpler object definition
+6. Spread and rest operators for easily manipulating arrays and objects
+7. Destructuring for extracting values from arrays and objects
+8. Default function parameters for more robust function declarations
+9. Promises for improved handling of asynchronous operations
+10. Modules for organizing code into reusable components`,
+    ],
+    code: ``,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {

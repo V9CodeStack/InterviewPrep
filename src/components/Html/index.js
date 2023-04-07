@@ -130,6 +130,19 @@ const htmlobj = [
     code: ``,
     video: ``,
   },
+  /* **** question 11 **** */
+  {
+    id: 11,
+    question: `11. what are the Position attributes in CSS?`,
+    answer: [
+      `Static: This is the default position of an element. It appears in the normal flow of the web page.`,
+      `Relative: This position attribute sets the position of an element relative to its normal position on the web page. Once an element is given a relative position, it can be moved using top, right, bottom, and left properties.`,
+      `Absolute: This position attribute removes an element from the normal flow of the web page and positions it relative to its nearest positioned ancestor. Once an element is given an absolute position, it can be moved using top, right, bottom, and left properties.`,
+      `Fixed: This position attribute removes an element from the normal flow of the web page and positions it relative to the browser window. Once an element is given a fixed position, it can be moved using top, right, bottom, and left properties. The position of the element will not change even if the page is scrolled.`,
+    ],
+    code: ``,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {
