@@ -482,6 +482,74 @@ console.log(result); //3000
 `,
     pythonCode: ``,
   },
+  /* **** question 20 **** */
+  {
+    id: 20,
+    question: `20. Write a function that takes a number as input and returns its English representation (e.g. 1234 -> "one thousand two hundred thirty-four").?`,
+    javaScriptCode: `/** JavaScript **/
+const numbers = [
+  "",
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+];
+const tens = [
+  "",
+  "",
+  "twenty",
+  "thirty",
+  "forty",
+  "fifty",
+  "sixty",
+  "seventy",
+  "eighty",
+  "ninety",
+];
+const teens = [
+  "ten",
+  "eleven",
+  "twelve",
+  "thirteen",
+  "fourteen",
+  "fifteen",
+  "sixteen",
+  "seventeen",
+  "eighteen",
+  "nineteen",
+];
+
+function convertNumberToString(number) {
+  if (number < 10) {
+    return numbers[number];
+  } else if (number < 20) {
+    return teens[number - 10];
+  } else if (number < 100) {
+    return tens[Math.floor(number / 10)] + " " + numbers[number % 10];
+  } else if (number < 1000) {
+    return (
+      numbers[Math.floor(number / 100)] +
+      " hundred " +
+      convertNumberToString(number % 100)
+    );
+  } else {
+    return (
+      convertNumberToString(Math.floor(number / 1000)) +
+      " thousand " +
+      convertNumberToString(number % 1000)
+    );
+  }
+}
+
+console.log(convertNumberToString(5476)); // five thousand four hundred seventy six
+`,
+    pythonCode: ``,
+  },
 ];
 
 const ObjBluePrint = {

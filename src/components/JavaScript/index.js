@@ -690,6 +690,49 @@ console.log(newArray); // output: ['h', 'e', 'l', 'l', 'o']
 `,
     video: ``,
   },
+  /* **** question 37 **** */
+  {
+    id: 37,
+    question: `37. what is event loop in javascript ?`,
+    answer: [
+      `The event loop is one of the most important concepts in JavaScript that determines how JavaScript handles the execution of multiple tasks. JavaScript is a single-threaded language, meaning it can only execute one task at a time, but it can delegate time-consuming tasks to other processes or threads.`,
+      `The event loop is the mechanism that allows JavaScript to handle asynchronous events, such as user input, server responses, or timers, in a non-blocking way. It continuously checks the call stack and the message queue to see if there are any functions waiting to be executed.`,
+      `When the call stack is empty, the event loop checks the message queue for the next event. If there is an event, the associated callback function is added to the call stack for execution. If there are no events, the event loop continues to wait for new events to arrive.`,
+      `In this way, the event loop manages the execution of asynchronous code in JavaScript, allowing it to handle multiple tasks simultaneously without blocking the execution of other code.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  /* **** question 38 **** */
+  {
+    id: 38,
+    question: `38. What is the precedence in the event loop? What is the highest precedence between Promise and setTimeout?`,
+    answer: [
+      `In the JavaScript event loop, tasks are prioritized based on their type and order. The tasks are divided into two main categories:`,
+      `Synchronous Tasks: These tasks are executed immediately and are given the highest priority. They are executed in the order in which they are received.`,
+      `Asynchronous Tasks: These tasks are not executed immediately, but are put in a queue and executed only when the stack is empty. They are further divided into two categories:
+
+      a. Microtasks: These are high-priority tasks and are executed immediately after the current task has completed. Examples include Promise callbacks and process.nextTick().
+      
+      b. Macrotasks: These are low-priority tasks and are executed after all the microtasks have been completed. Examples include setTimeout() and setInterval().`,
+      `Promise has a higher precedence over setTimeout in the event loop. When a Promise resolves, it immediately goes to the microtask queue, which has a higher priority than the task queue where setTimeout callbacks are queued.`,
+      `This means that even if a Promise and a setTimeout are both ready to be executed, the Promise will be executed first before the setTimeout callback.`,
+
+      `The event loop follows this sequence of execution:
+
+      1. Execute a Synchronous Task if there is any.
+      
+      2. Execute all Microtasks that are currently in the queue.
+      
+      3. Wait for I/O operations or other asynchronous tasks to complete and add their respective callbacks to the task queue.
+      
+      4. Execute all Macrotasks that are currently in the queue.
+      
+      5. Go back to step 1 and repeat the process.`,
+    ],
+    code: ``,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {
