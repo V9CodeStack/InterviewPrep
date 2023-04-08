@@ -228,6 +228,181 @@ function About() {
     code: ``,
     video: ``,
   },
+  /* **** question 12 **** */
+  {
+    id: 12,
+    question: `12. what is alternative of component did mount in functional component ?`,
+    answer: [
+      `In functional components, we can use the useEffect hook as an alternative to componentDidMount and componentWillUnmount lifecycle methods.`,
+      `To achieve the same functionality as componentDidMount, we can use useEffect with an empty dependency array []. This will execute the effect only once, after the initial render.`,
+      ,
+    ],
+    code: `import React, { useEffect } from 'react';
+
+function MyComponent() {
+  useEffect(() => {
+    // code to be executed after the component mounts
+    return () => {
+      // code to be executed before the component unmounts
+    }
+  }, []); // empty dependency array indicates this effect should only be executed once
+  return (
+    // component rendering
+  );
+}
+`,
+    video: ``,
+  },
+  /* **** question 13 **** */
+  {
+    id: 13,
+    question: `13. what is alternative of component will unmount in functional component?`,
+    answer: [
+      `In functional components, we can use the useEffect hook as an alternative to componentDidMount and componentWillUnmount lifecycle methods.`,
+      `To achieve the same functionality as componentWillUnmount, we can return a function from the useEffect callback. This function will be executed before the component unmounts.`,
+      ,
+    ],
+    code: `import React, { useEffect } from 'react';
+
+function MyComponent() {
+  useEffect(() => {
+    // code to be executed after the component mounts
+    return () => {
+      // code to be executed before the component unmounts
+    }
+  }); // no dependency array indicates this effect should execute on every re-render
+  return (
+    // component rendering
+  );
+}
+`,
+    video: ``,
+  },
+  /* **** question 14 **** */
+  {
+    id: 14,
+    question: `14. what is useRef ? give sample example `,
+    answer: [
+      `useRef is a hook in React that provides a mutable reference object that persists throughout the lifecycle of a component. It can be used to store a reference to a DOM element, to store a value that is mutable but doesn't need to trigger a re-render, or to store any other value that needs to persist between renders.`,
+    ],
+    code: `import { useRef } from 'react';
+
+function MyComponent() {
+  const inputRef = useRef(null);
+
+  const handleClick = () => {
+    inputRef.current.value = 'Button clicked';
+  };
+
+  return (
+    <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleClick}>Click me</button>
+    </div>
+  );
+}
+`,
+    video: ``,
+  },
+  /* **** question 15 **** */
+  {
+    id: 15,
+    question: `15. what is Router and write s simple example of two page Router ?`,
+    answer: [
+      `In React, Router is used to manage the navigation of components in a Single Page Application (SPA). It allows you to create different routes for your application, so that when the user enters a specific URL, a particular component will be rendered on the page.`,
+    ],
+    code: `import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
+function Home() {
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <p>Welcome to the Home Page</p>
+      <Link to="/about">Go to About Page</Link>
+    </div>
+  );
+}
+
+function About() {
+  return (
+    <div>
+      <h1>About Page</h1>
+      <p>Welcome to the About Page</p>
+      <Link to="/">Go to Home Page</Link>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
+`,
+    video: ``,
+  },
+  /* **** question 16 **** */
+  {
+    id: 16,
+    question: `16. How would you handle the situation of a UI crash during the rendering part in kreact, for both functional and component-based components?`,
+    answer: [
+      `In React, if the UI crashes during rendering, we can use an Error Boundary to handle the situation. In kreact, we can achieve this by creating a Component or Functional Component that implements the componentDidCatch() method to catch any errors that occur during rendering.`,
+      `For a Class Component, we can create an Error Boundary component by implementing the componentDidCatch()`,
+      `For a Functional Component, we can use a higher-order component to wrap our component `,
+    ],
+    code: `//**Class Component**//
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  componentDidCatch(error, info) {
+    console.log(error, info);
+    this.setState({ hasError: true });
+  }
+  render() {
+    if (this.state.hasError) {
+      return <h1>Something went wrong.</h1>;
+    }
+    return this.props.children;
+  }
+}
+// We can then wrap any component we want to protect with the ErrorBoundary component as follows:
+<ErrorBoundary>
+  <ComponentThatMightCrash />
+</ErrorBoundary>
+
+
+//**Functional Component**//
+function withErrorBoundary(Component) {
+  return function WrappedComponent(props) {
+    const [hasError, setHasError] = useState(false);
+    function componentDidCatch(error, info) {
+      console.log(error, info);
+      setHasError(true);
+    }
+    if (hasError) {
+      return <h1>Something went wrong.</h1>;
+    }
+    return <Component {...props} />;
+  }
+}
+// We can then wrap any functional component we want to protect with the withErrorBoundary higher-order component as follows:
+const ComponentThatMightCrash = withErrorBoundary(function MyComponent(props) {
+  // Component code here
+});
+
+`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {
