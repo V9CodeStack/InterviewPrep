@@ -583,7 +583,8 @@ countNumbers(1, 10); // 1 2 3 4 5 6 ...10`,
   /* **** question 23 **** */
   {
     id: 23,
-    question: `/** JavaScript **/
+    question: `23. print first non repeating character ? `,
+    javaScriptCode: `/** JavaScript **/
 let str = "abcab";
 
 let obj = {};
@@ -605,8 +606,7 @@ for (let i = 0; i < str.length; i++) {
   if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
     console.log(str[i]); // C
   }
-}
-`,
+}`,
     pythonCode: ``,
   },
 ];
