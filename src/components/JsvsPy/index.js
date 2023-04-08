@@ -550,6 +550,65 @@ console.log(convertNumberToString(5476)); // five thousand four hundred seventy 
 `,
     pythonCode: ``,
   },
+  /* **** question 21 **** */
+  {
+    id: 21,
+    question: `21. Sum of numbers using Recursive function ?`,
+    javaScriptCode: `num = 4;
+function sumOfNumbers(num) {
+  if (num <= 1) {
+    return num;
+  } else {
+    return num + sumOfNumbers(num - 1);
+  }
+}
+console.log(sumOfNumbers(num)); // 10`,
+    pythonCode: ``,
+  },
+  /* **** question 22 **** */
+  {
+    id: 22,
+    question: `22. print 1 to 10 using Recursive function ?`,
+    javaScriptCode: `/** JavaScript **/
+function countNumbers(start, end) {
+  if (start > end) {
+    return;
+  }
+  console.log(start);
+  countNumbers(start + 1, end);
+}
+countNumbers(1, 10); // 1 2 3 4 5 6 ...10`,
+    pythonCode: ``,
+  },
+  /* **** question 23 **** */
+  {
+    id: 23,
+    question: `/** JavaScript **/
+let str = "abcab";
+
+let obj = {};
+for (let i = 0; i < str.length; i++) {
+  obj[str[i]] = obj[str[i]] ? obj[str[i]] + 1 : 1;
+}
+
+console.log(obj); // { a: 2, b: 2, c: 1 }
+
+for (j in obj) {
+  if (obj[j] === 1) {
+    console.log(j); // C
+  }
+}
+
+/*Another Method*/
+
+for (let i = 0; i < str.length; i++) {
+  if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
+    console.log(str[i]); // C
+  }
+}
+`,
+    pythonCode: ``,
+  },
 ];
 
 const ObjBluePrint = {
