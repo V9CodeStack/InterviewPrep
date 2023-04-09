@@ -609,6 +609,39 @@ for (let i = 0; i < str.length; i++) {
 }`,
     pythonCode: ``,
   },
+  /* **** question 24 **** */
+  {
+    id: 24,
+    question: `24. Order of Output for below code?`,
+    javaScriptCode: `console.log(1); 
+
+setTimeout(function () {
+  console.log(2);
+}, 1000); 
+
+setTimeout(function () {
+  console.log(3);
+}, 0);
+
+console.log(4);
+
+// Order of Output is 1 4 3 2`,
+    pythonCode: ``,
+  },
+  /* **** question 25 **** */
+  {
+    id: 25,
+    question: `25. Output for below code?`,
+    javaScriptCode: `function x() {
+  setTimeout(function () {
+    console.log(i);
+  }, 1000);
+  var i = 1;
+}
+x();
+// Output: 1`,
+    pythonCode: ``,
+  },
 ];
 
 const ObjBluePrint = {

@@ -403,6 +403,270 @@ const ComponentThatMightCrash = withErrorBoundary(function MyComponent(props) {
 `,
     video: ``,
   },
+  /* **** question 17 **** */
+  {
+    id: 17,
+    question: `17. using class component, fetch data from API and filter data only if the age is < 50 ?`,
+    answer: [],
+    code: `import { Component } from "react";
+
+class App extends Component {
+  state = { mainData: [] };
+
+  fetchData = async () => {
+    const url =
+      "https://hub.dummyapis.com/employee?noofrecords=10&idStarts=1001";
+    const response = await fetch(url);
+    const data = await response.json();
+    this.setState({ mainData: data });
+  };
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  filterdData = (mainData) => {
+    const applyFilter = mainData.filter((eachData) => eachData.age < 50);
+    return applyFilter;
+  };
+
+  render() {
+    const { mainData } = this.state;
+    const filterData = this.filterdData(mainData);
+
+    return (
+      <div>
+        <ul>
+          {filterData.map((eachData) => (
+            <li key={eachData.id}>
+              {eachData.firstName} {eachData.age}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+// Output
+Toni 37
+Mabel 39
+Meredith 46
+Kris 25
+Libby 27
+`,
+    video: ``,
+  },
+  /* **** question 18 **** */
+  {
+    id: 18,
+    question: `18. using functional component, fetch data from API and filter data only if the age is < 50 ?`,
+    answer: [],
+    code: `import { useEffect, useState } from "react";
+
+const App = () => {
+  const [mainData, setMainData] = useState([]);
+
+  const fetchData = async () => {
+    const url = "https://hub.dummyapis.com/employee?noofrecords=10&idStarts=1001";
+    const response = await fetch(url);
+    const data = await response.json();
+    setMainData(data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const filterdData = (mainData) => {
+    const applyFilter = mainData.filter((eachData) => eachData.age < 50);
+    return applyFilter;
+  };
+
+  const filterData = filterdData(mainData);
+
+  return (
+    <div>
+      <ul>
+        {filterData.map((eachData) => (
+          <li key={eachData.id}>
+            {eachData.firstName} {eachData.age}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default App;
+
+// Output
+Toni 37
+Mabel 39
+Meredith 46
+Kris 25
+Libby 27
+`,
+    video: ``,
+  },
+  /* **** question 19 **** */
+  {
+    id: 19,
+    question: `19. Lifecycle methods In React functional components ?`,
+    answer: [
+      `In React functional components, lifecycle methods can be implemented using the useEffect hook. The useEffect hook is a function that gets called after every rendering of a component. It allows us to define some side-effects, such as fetching data, manipulating the DOM, or subscribing to a WebSocket. Here are some examples:`,
+    ],
+    code: `1. componentDidMount() equivalent in functional component:
+
+import { useState, useEffect } from 'react';
+
+function App() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // This will be called after the first render
+    // Add the logic for componentDidMount here
+    async function fetchData() {
+      try {
+        const response = await fetch('https://api.example.com/data');
+        const data = await response.json();
+        setData(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      {data ? (
+        <ul>
+          {data.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+}
+
+ 
+2. componentDidUpdate() equivalent in functional component:
+
+import { useState, useEffect } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    // This will be called after every render
+    // Add the logic for componentDidUpdate here
+    document.title = Count: {count};
+  });
+
+  const handleIncrement = () => setCount(count + 1);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={handleIncrement}>Increment</button>
+    </div>
+  );
+}
+
+
+3. componentWillUnmount() equivalent in functional component:
+
+import { useState, useEffect } from 'react';
+
+function Timer() {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    // This will be called after the first render
+    const intervalId = setInterval(() => {
+      setSeconds((prevSeconds) => prevSeconds + 1);
+    }, 1000);
+
+    // This function will be called when the component is unmounted
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return <div>{seconds} seconds</div>;
+}
+ `,
+    video: ``,
+  },
+  /* **** question 20 **** */
+  {
+    id: 20,
+    question: `20. what is useReducer ?`,
+    answer: [
+      `useReducer is a hook in React that allows you to manage state by dispatching actions that update the state based on the previous state. It is similar to Redux, but built into React. Here is a simple example:`,
+    ],
+    code: `import { useReducer } from 'react';
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+    </>
+  );
+}
+`,
+    video: ``,
+  },
+  /* **** question 21 **** */
+  {
+    id: 22,
+    question: `22. what is middleware in Redux ? what is purpose of middleware ?`,
+    answer: [
+      `In Redux, middleware is a way to modify the behavior of the dispatch function. It provides a third-party extension point between dispatching an action and the moment it reaches the reducer. Middleware allows you to add additional functionality to Redux, such as logging, handling asynchronous actions, or modifying actions before they reach the reducer.`,
+      `The purpose of middleware is to provide a way to add custom behavior to Redux without modifying the core library. It allows developers to add reusable code that can be shared across multiple projects. Middleware is a way to separate concerns and make the code more modular and easier to maintain.`,
+      `Logging middleware: This middleware logs all dispatched actions and the resulting state changes.`,
+      `Thunk middleware: This middleware allows you to write action creators that return a function instead of an action object. This is useful for handling asynchronous actions, such as fetching data from an API.`,
+      `Saga middleware: This middleware allows you to handle complex side effects, such as calling multiple APIs or dispatching multiple actions in response to a single action.`,
+      `Overall, middleware in Redux is a powerful tool for adding functionality to the library and customizing it to fit the needs of your application.`,
+    ],
+    code: `const logMiddleware = store => next => action => {
+  if (action.type === 'ADD_ITEM') {
+    console.log('Item added:', action.payload);
+  }
+  return next(action);
+}
+
+const store = createStore(reducer, applyMiddleware(logMiddleware));
+
+In this example, logMiddleware is a function that takes the Redux store as an argument 
+and returns another function that takes next as an argument. next is a function that 
+represents the next middleware or the reducer that will handle the action. Finally, 
+the middleware returns a function that takes action as an argument.
+
+When an action is dispatched to the store, the middleware intercepts it and logs the 
+message before passing the action on to the next middleware or the reducer.
+`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {
