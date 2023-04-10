@@ -638,8 +638,8 @@ function Counter() {
   },
   /* **** question 21 **** */
   {
-    id: 22,
-    question: `22. what is middleware in Redux ? what is purpose of middleware ?`,
+    id: 21,
+    question: `21. what is middleware in Redux ? what is purpose of middleware ?`,
     answer: [
       `In Redux, middleware is a way to modify the behavior of the dispatch function. It provides a third-party extension point between dispatching an action and the moment it reaches the reducer. Middleware allows you to add additional functionality to Redux, such as logging, handling asynchronous actions, or modifying actions before they reach the reducer.`,
       `The purpose of middleware is to provide a way to add custom behavior to Redux without modifying the core library. It allows developers to add reusable code that can be shared across multiple projects. Middleware is a way to separate concerns and make the code more modular and easier to maintain.`,
@@ -665,6 +665,48 @@ the middleware returns a function that takes action as an argument.
 When an action is dispatched to the store, the middleware intercepts it and logs the 
 message before passing the action on to the next middleware or the reducer.
 `,
+    video: ``,
+  },
+  /* **** question 22 **** */
+  {
+    id: 22,
+    question: `23. what is difference between thunk and saga ?`,
+    answer: [
+      `Thunks and Sagas are both middleware used in Redux to handle asynchronous actions. However, they differ in their approach and usage.`,
+      `Thunks are functions that are returned by another function, and are used to delay the evaluation of an expression. In Redux, thunks are used to dispatch asynchronous actions. A typical thunk is a function that returns another function, which is passed the Redux store's dispatch method as an argument. The inner function can then perform some asynchronous operation, and dispatch one or more actions to the store when the operation is complete.`,
+      `Sagas, on the other hand, are more complex and use generators and yield statements to create a sequence of actions to handle asynchronous operations. Sagas are often used for more complex scenarios, such as handling long-running processes, or coordinating multiple asynchronous actions. They allow for greater control over the flow of actions, and can handle complex workflows more easily than thunks.`,
+      `In summary, thunks are simpler and easier to use, while sagas provide more powerful capabilities for handling complex asynchronous workflows.`,
+    ],
+    code: `/**Thunk**/
+export const fetchPosts = () => {
+  return (dispatch) => {
+    dispatch({ type: "FETCH_POSTS_REQUEST" });
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((posts) => dispatch({ type: "FETCH_POSTS_SUCCESS", payload: posts }))
+      .catch((error) => dispatch({ type: "FETCH_POSTS_FAILURE", error: error.message }));
+  };
+};
+
+
+/**Saga**/
+import { takeLatest, call, put } from "redux-saga/effects";
+import { fetchPostsSuccess, fetchPostsFailure } from "./actions";
+import { FETCH_POSTS_REQUEST } from "./constants";
+
+function* fetchPosts() {
+  try {
+    const response = yield call(fetch, "https://jsonplaceholder.typicode.com/posts");
+    const posts = yield call([response, "json"]);
+    yield put(fetchPostsSuccess(posts));
+  } catch (error) {
+    yield put(fetchPostsFailure(error.message));
+  }
+}
+
+export default function* rootSaga() {
+  yield takeLatest(FETCH_POSTS_REQUEST, fetchPosts);
+}`,
     video: ``,
   },
 ];

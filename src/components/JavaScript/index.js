@@ -752,6 +752,80 @@ console.log(newArray); // output: ['h', 'e', 'l', 'l', 'o']
     code: ``,
     video: ``,
   },
+  /* **** question 40 **** */
+  {
+    id: 40,
+    question: `40. what is difference between spread operator and rest operator ? give me one example with array and object ?`,
+    answer: [
+      `spread operator is used to expand an array or object into individual elements. `,
+      `Rest operator is used to represent an indefinite number of arguments as an array.`,
+    ],
+    code: `/**spread operator**/
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combined = [...arr1, ...arr2];
+
+console.log(combined); // [1, 2, 3, 4, 5, 6]
+
+const obj1 = { name: 'Alice', age: 25 };
+const obj2 = { city: 'Toronto', country: 'Canada' };
+const combined = { ...obj1, ...obj2 };
+
+console.log(combined); // { name: 'Alice', age: 25, city: 'Toronto', country: 'Canada' }
+
+
+/**Rest operator**/
+const numbers = [1, 2, 3, 4, 5];
+
+const [first, second, ...rest] = numbers;
+
+console.log(first); // 1
+console.log(second); // 2
+console.log(rest); // [3, 4, 5]
+
+const person = {
+  name: 'John',
+  age: 30,
+  city: 'New York',
+  country: 'USA'
+};
+
+const { name, age, ...rest } = person;
+
+console.log(name); // 'John'
+console.log(age); // 30
+console.log(rest); // { city: 'New York', country: 'USA' }`,
+    video: ``,
+  },
+  /* **** question 41 **** */
+  {
+    id: 41,
+    question: `41. what is Destructuring in JavaScript?`,
+    answer: [
+      `Destructuring is a feature in JavaScript that allows us to extract data from arrays and objects into separate variables.`,
+    ],
+    code: `const numbers = [1, 2, 3, 4, 5];
+const [a, b, ...rest] = numbers;
+
+console.log(a); // 1
+console.log(b); // 2
+console.log(rest); // [3, 4, 5]
+
+
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+const { name, age, city } = person;
+
+console.log(name); // "John"
+console.log(age); // 30
+console.log(city); // "New York"
+
+`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {

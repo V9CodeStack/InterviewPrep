@@ -642,6 +642,26 @@ x();
 // Output: 1`,
     pythonCode: ``,
   },
+  /* **** question 26 **** */
+  {
+    id: 26,
+    question: `26. write the JavaScript function that takes an n-digit number, sums the digits, and repeats the process until the sum is less than or equal to 10 ?`,
+    javaScriptCode: `let result;
+function sumData(num) {
+  let str = num.toString().split("");
+  let summing = str.reduce((a, b) => parseInt(a) + parseInt(b));
+  if (summing > 10) {
+    sumData(summing);
+  } else {
+    result = summing;
+  }
+}
+
+sumData(5431);
+
+console.log(result); // 4`,
+    pythonCode: ``,
+  },
 ];
 
 const ObjBluePrint = {
