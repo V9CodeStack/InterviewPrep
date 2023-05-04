@@ -143,6 +143,46 @@ const htmlobj = [
     code: ``,
     video: ``,
   },
+  {
+    id: 12,
+    question: `12. what is semantic HTML? name some HTML tags ?`,
+    answer: [
+      `Semantic HTML refers to the use of HTML markup to reinforce the meaning and structure of web content, rather than just to define its appearance. By using semantic HTML, web developers can create more accessible, reusable, and SEO-friendly web pages.`,
+      `By using these and other semantic HTML tags, web developers can create web pages that are more accessible to users with disabilities, more easily understood by search engines, and easier to maintain and update over time.`,
+      `<header> - used to define the header of a page or section`,
+      `<nav> - used to define a set of navigation links`,
+      `<main> - used to define the main content of a page`,
+      `<section> - used to define a section of a page`,
+      `<article> - used to define an article or blog post`,
+      `<aside> - used to define a section of a page that is not directly related to the main content`,
+      `<footer> - used to define the footer of a page or section`,
+      `<address> - used to provide contact information for the author or owner of a page`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 13,
+    question: `13. what do you mean by CSS box model ?`,
+    answer: [
+      `The CSS box model is a layout model that describes how elements in HTML are visually represented on the web page. It is based on the idea that every HTML element can be thought of as a rectangular box that encloses its content, including any padding, borders, and margins.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 14,
+    question: `14. Expain CSS specificity ?`,
+    answer: [
+      `CSS specificity refers to the set of rules that determine which styles are applied to an HTML element when multiple conflicting styles are defined. In other words, it determines which CSS rules take precedence over others when multiple rules apply to the same element.`,
+      `Inline styles - styles applied directly to an HTML element using the "style" attribute. These have the highest specificity and will always override other styles, regardless of their specificity.`,
+      `IDs - styles applied to an element using the "#" symbol followed by an ID name. IDs have a higher specificity than classes and elements.`,
+      `Classes and attribute selectors - styles applied to elements using class names, attribute selectors, or pseudo-classes. These have a lower specificity than IDs but a higher specificity than element selectors.`,
+      `Element selectors - styles applied to all instances of a particular HTML element, such as "p" or "div". These have the lowest specificity and will be overridden by all other types of selectors.`,
+    ],
+    code: ``,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {

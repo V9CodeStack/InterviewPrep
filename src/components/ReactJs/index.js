@@ -709,6 +709,66 @@ export default function* rootSaga() {
 }`,
     video: ``,
   },
+  {
+    id: 23,
+    question: `23. Make a automated Time using ReactJS ?`,
+    answer: [],
+    code: `// *** using Class Component *** //
+
+import React, { useState, useEffect } from "react";
+
+const App = () => {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <center>
+      <h1>Current Time</h1>
+      <p>{currentTime.toLocaleTimeString()}</p>
+    </center>
+  );
+};
+
+export default App;
+
+    
+// *** using Class Component *** //
+
+import { Component } from "react";
+
+class App extends Component {
+  state = { currentTime: new Date() };
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  componentDidMount() {
+    const interval = setInterval(() => {
+      this.setState({ currentTime: new Date() });
+    }, 1000);
+  }
+
+  render() {
+    const { currentTime } = this.state;
+    return (
+      <center>
+        <h1>Current Time</h1>
+        <p>{currentTime.toLocaleTimeString()}</p>
+      </center>
+    );
+  }
+}
+
+export default App;`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {

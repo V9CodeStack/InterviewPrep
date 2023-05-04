@@ -104,7 +104,19 @@ function flatternArry(arr) {
   }
   return result;
 }
-console.log(flatternArry(arr)); // Output: [13, 12, 7, 4, 10, 11, 9, 6]`,
+console.log(flatternArry(arr)); // Output: [13, 12, 7, 4, 10, 11, 9, 6]
+
+// OR 
+
+function flatArray(arr) {
+  let flatrenArray = arr;
+  for (let i = 0; i < arr.length; i++) {
+    flatrenArray = flatrenArray.flat();
+  }
+  return flatrenArray;
+}
+
+console.log(flatArray(arr)); // [13, 12, 7, 4,10, 11, 9, 6]`,
     pythonCode: `/** Python **/
 arr = [13, [12, [7, 4, [10, 11]], 9], 6]
 
@@ -143,7 +155,22 @@ function maximunSubArraySum(arr) {
   return arrySum.sort((a, b) => b - a)[0];
 }
 
-console.log(maximunSubArraySum(arr)); // Output: 10`,
+console.log(maximunSubArraySum(arr)); // Output: 10
+
+/** Using Kadane's algorithm, which is an efficient algorithm **/
+function getMaxSubarraySum(arr) {
+  let maxSum = arr[0];
+  let currentSum = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    currentSum = Math.max(arr[i], currentSum + arr[i]);
+    maxSum = Math.max(maxSum, currentSum);
+  }
+
+  return maxSum;
+}
+
+console.log(getMaxSubarraySum(arr)); //10`,
     pythonCode: ``,
   },
   /* **** question 7 **** */
@@ -660,6 +687,35 @@ function sumData(num) {
 sumData(5431);
 
 console.log(result); // 4`,
+    pythonCode: ``,
+  },
+  {
+    id: 27,
+    question: `27. Write a logic to move all 0's to the end in an array ?`,
+    javaScriptCode: `function moveZerosToEnd(arr) {
+  let numZeros = 0;
+  
+  // Loop through the array, counting the number of zeros
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) {
+      numZeros++;
+    }
+  }
+  
+  // Create a new array with all non-zero elements in the original array
+  let result = arr.filter((elem) => elem !== 0);
+  
+  // Add the appropriate number of zeros to the end of the new array
+  for (let i = 0; i < numZeros; i++) {
+    result.push(0);
+  }
+  
+  return result;
+}
+
+let arr = [1, 0, 2, 0, 3, 0, 4, 0, 5];
+let result = moveZerosToEnd(arr);
+console.log(result); // [1, 2, 3, 4, 5, 0, 0, 0, 0]`,
     pythonCode: ``,
   },
 ];

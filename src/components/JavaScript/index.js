@@ -826,6 +826,131 @@ console.log(city); // "New York"
 `,
     video: ``,
   },
+  {
+    id: 42,
+    question: `42. what is temporial dead zone in javascript ?`,
+    answer: [
+      `The Temporal Dead Zone (TDZ) in JavaScript is a behavior that is related to the way that variables are hoisted and scoped in the language. It's a concept that's related to the use of the let and const keywords to declare variables.`,
+      `When a variable is declared using let or const, it is not available for use until it has been fully initialized. This means that there is a "dead zone" in the code, between the point where the variable is declared and the point where it is initialized, where it cannot be accessed. Attempting to access a variable during this period will result in a reference error.`,
+    ],
+    code: `console.log(x); // ReferenceError: x is not defined
+
+let x = 5;`,
+    video: `https://www.youtube.com/watch?v=HQm5OohZtB4`,
+  },
+  {
+    id: 43,
+    question: `43. Explain how does browser understands JSX/JS ?`,
+    answer: [
+      `JSX is a syntax extension for JavaScript that is commonly used with the React library to build user interfaces for web applications. When a web page containing JSX is loaded in a browser, the browser itself does not understand JSX directly. Instead, the JSX code must be transpiled into plain JavaScript code that the browser can interpret and execute.`,
+      `To transpile JSX code into plain JavaScript code, developers use a tool called a JSX compiler or transpiler. One of the most popular JSX transpilers is Babel, which can be used to convert JSX code into JavaScript that is compatible with all modern browsers.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 44,
+    question: `44. what is polyfill ? write a polyfill for forEach method ?`,
+    answer: [
+      `In web development, a polyfill is a piece of code that provides modern functionality on older browsers that do not natively support it. Polyfills typically use JavaScript to add new functionality to the browser by detecting if a feature is missing and then providing a custom implementation to fill the gap.`,
+      `For example, the forEach method is a relatively new addition to the JavaScript language, and it may not be available on older browsers. A polyfill for the forEach method could be used to provide a similar functionality on those browsers that do not natively support it.`,
+    ],
+    code: `if (!Array.prototype.forEach) {
+  Array.prototype.forEach = function(callback, thisArg) {
+    if (typeof callback !== "function") {
+      throw new TypeError(callback + " is not a function");
+    }
+    for (var i = 0, len = this.length; i < len; i++) {
+      callback.call(thisArg, this[i], i, this);
+    }
+  };
+}
+`,
+    video: ``,
+  },
+  {
+    id: 45,
+    question: `45. ES6/ES7 things you have used ?`,
+    answer: [
+      `ES6:
+Arrow functions,
+Template literals,
+Destructuring assignment,
+Spread syntax,
+Rest parameters,
+Classes,
+let and const`,
+      `ES7:
+Promises,
+
+Async/await`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 47,
+    question: `47. why do we need arrow functions ?`,
+    answer: [
+      `Arrow functions are a feature introduced in ES6 that provide a more concise and cleaner syntax for writing function expressions in JavaScript. Here are a few reasons why they are useful:`,
+      `1.Shorter syntax: Arrow functions have a shorter syntax than regular functions, which can make the code easier to read and write. They allow you to omit the function keyword and use a concise syntax for defining the function parameters and body.`,
+      `2.Implicit return: Arrow functions have an implicit return feature that allows you to return a value without having to use the return keyword. If the function body consists of a single expression, that expression will be returned automatically. This can make the code more concise and easier to read.`,
+      `3.this binding: In traditional functions, the value of the this keyword depends on how the function is called, which can sometimes lead to confusion and bugs. In arrow functions, the value of this is inherited from the surrounding lexical scope, which can make the code more predictable and easier to reason about.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 48,
+    question: `48. what does objevct.freeze does ?`,
+    answer: [
+      `In JavaScript, Object.freeze() is a method that freezes an object by preventing new properties from being added to it, existing properties from being removed or modified, and the object's [[Prototype]] from being changed.`,
+      `When an object is frozen, it becomes immutable, meaning that its properties cannot be changed. Any attempt to modify the object or its properties will fail silently in non-strict mode or throw a TypeError in strict mode.`,
+    ],
+    code: `const myObject = {
+  name: 'John',
+  age: 30
+};
+
+// Freeze the object
+Object.freeze(myObject);
+
+// Try to modify the object
+myObject.name = 'Jane'; // This will fail silently in non-strict mode
+
+console.log(myObject); // Output: { name: 'John', age: 30 }
+`,
+    video: ``,
+  },
+  {
+    id: 49,
+    question: `49. what is event bubbling and how to prevent it ?`,
+    answer: [
+      `Event bubbling is a mechanism in which events triggered on a child element of the DOM hierarchy will "bubble up" and be handled by parent elements in sequence until the top-level parent element is reached.`,
+      `For example, if you have a button inside a div element and both have a click event listener, clicking on the button will trigger its click event first, followed by the click event of the div element. This happens because the click event bubbles up from the button to its parent elements in the DOM hierarchy.`,
+      `In some cases, you may want to prevent event bubbling to avoid unwanted behavior or improve performance. To prevent event bubbling, you can use the event.stopPropagation() method inside the event listener of the child element. This method stops the event from propagating up the DOM hierarchy and prevents any parent elements from receiving the event.`,
+      `Note that while preventing event bubbling can be useful in some cases, it can also make it harder to maintain and debug your code. Be sure to use it judiciously and only when necessary.`,
+    ],
+    code: `<div id="parent">
+  <button id="child">Click me</button>
+</div>
+
+<script>
+  const childElement = document.querySelector('#child');
+  const parentElement = document.querySelector('#parent');
+
+  childElement.addEventListener('click', function(event) {
+    event.stopPropagation();
+    console.log('Child element clicked');
+  });
+
+  parentElement.addEventListener('click', function() {
+    console.log('Parent element clicked');
+  });
+</script>
+`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {
