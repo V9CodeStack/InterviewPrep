@@ -713,7 +713,7 @@ export default function* rootSaga() {
     id: 23,
     question: `23. Make a automated Time using ReactJS ?`,
     answer: [],
-    code: `// *** using Class Component *** //
+    code: `// *** using Functional Component *** //
 
 import React, { useState, useEffect } from "react";
 
