@@ -889,7 +889,7 @@ Async/await`,
     video: ``,
   },
   {
-    id: 47,
+    id: 46,
     question: `47. why do we need arrow functions ?`,
     answer: [
       `Arrow functions are a feature introduced in ES6 that provide a more concise and cleaner syntax for writing function expressions in JavaScript. Here are a few reasons why they are useful:`,
@@ -901,7 +901,7 @@ Async/await`,
     video: ``,
   },
   {
-    id: 48,
+    id: 47,
     question: `48. what does objevct.freeze does ?`,
     answer: [
       `In JavaScript, Object.freeze() is a method that freezes an object by preventing new properties from being added to it, existing properties from being removed or modified, and the object's [[Prototype]] from being changed.`,
@@ -923,7 +923,7 @@ console.log(myObject); // Output: { name: 'John', age: 30 }
     video: ``,
   },
   {
-    id: 49,
+    id: 48,
     question: `49. what is event bubbling and how to prevent it ?`,
     answer: [
       `Event bubbling is a mechanism in which events triggered on a child element of the DOM hierarchy will "bubble up" and be handled by parent elements in sequence until the top-level parent element is reached.`,
@@ -948,6 +948,94 @@ console.log(myObject); // Output: { name: 'John', age: 30 }
     console.log('Parent element clicked');
   });
 </script>
+`,
+    video: ``,
+  },
+  {
+    id: 49,
+    question: `49. Expain when you decide where to use class component over functional component ?`,
+    answer: [
+      `Performance: Functional components are generally faster and easier to optimize than Class components, especially if you are using React's memo or useCallback hooks to memoize props or functions. If your component does not need to maintain a state or use lifecycle methods, it is generally recommended to use a Functional component.`,
+      `Code organization: If you have a large component with complex logic, it might be easier to organize your code using a Class component, especially if you have a lot of methods and helper functions. With a Class component, you can keep all of your logic within a single class, whereas with a Functional component, you might need to split your logic across multiple functions.`,
+      `In summary, if you need to maintain a state or use lifecycle methods, you should use a Class component. If performance is a concern, or if your component does not need to maintain a state or use lifecycle methods, you should use a Functional component.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 50,
+    question: `50. what are the security measures you take while building an application ?`,
+    answer: [
+      `Input validation: Validate user input to ensure that it is the expected format and length, and does not contain any malicious code or characters. Use input validation techniques such as whitelisting, blacklisting, and regular expressions to ensure that only valid input is accepted.`,
+      `Authentication and authorization: Implement authentication and authorization mechanisms to ensure that only authorized users can access sensitive data and perform actions within the application. This may include using password policies, multi-factor authentication, and role-based access control.`,
+      `Secure communication: Use secure communication protocols such as HTTPS and SSL/TLS to encrypt data in transit between the client and server. This helps to prevent man-in-the-middle attacks and eavesdropping.`,
+      `Error handling: Implement proper error handling to prevent sensitive information from being leaked in error messages, and to ensure that any errors or exceptions are logged and reported appropriately.`,
+      `Access control: Implement access control mechanisms to ensure that users can only access the data and functionality that they are authorized to access. This may include using role-based access control, attribute-based access control, and least privilege access.`,
+      `Security testing: Perform regular security testing and code reviews to identify and address potential security vulnerabilities. This may include using automated vulnerability scanners, manual penetration testing, and code reviews.`,
+      `Regular updates and patches: Keep your application and underlying infrastructure up-to-date with the latest security patches and updates to ensure that any known security vulnerabilities are addressed.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 51,
+    question: `51. what is BOM/DOM ? and their different ?`,
+    answer: [
+      `BOM stands for Browser Object Model, and it represents the objects and methods provided by the browser itself. This includes objects such as window, history, navigator, and screen, which provide information about the browser and its environment. The BOM is not standardized and may vary between different browsers.`,
+      `DOM, on the other hand, stands for Document Object Model, and it represents the objects and methods that represent the structure and content of an HTML or XML document. This includes elements such as document, element, and node, which allow you to access and manipulate the content of a web page. The DOM is standardized by the W3C and is consistent across different browsers.`,
+      `The key difference between the BOM and DOM is that the BOM represents the browser and its environment, while the DOM represents the content of a web page. The BOM is used to perform tasks such as opening new windows, navigating back and forward in history, and detecting the user's screen resolution. The DOM, on the other hand, is used to manipulate the structure and content of a web page, such as adding, removing, or modifying HTML elements.`,
+      `In summary, BOM and DOM are two different models used to represent a web page in a browser. The BOM represents the browser and its environment, while the DOM represents the content of a web page. The BOM is not standardized and may vary between different browsers, while the DOM is standardized by the W3C and is consistent across different browsers.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 52,
+    question: `52. what is the difference between promise/async-await ? when should we use promise, when should we use async-await ?`,
+    answer: [
+      `Promises and async/await are both mechanisms for handling asynchronous operations in JavaScript.`,
+      `Promises were introduced in ES6 and provide a way to handle asynchronous operations without using callbacks. A Promise represents a value that may not be available yet, but will be at some point in the future. Promises are chainable and can be used to handle success and failure of asynchronous operations.`,
+      `Async/await, on the other hand, is a syntax introduced in ES2017 that allows you to write asynchronous code that looks like synchronous code. Async functions return Promises and use the await keyword to pause execution until a Promise is resolved. This makes it easier to write asynchronous code that is easy to read and understand.`,
+      `Here are some general guidelines on when to use Promises vs. async/await:`,
+      `1. Promises are a good choice when you need to handle a sequence of asynchronous operations that depend on each other. Promises can be chained together using .then() to ensure that each operation is executed in the correct order.`,
+      `2. Async/await is a good choice when you have a complex asynchronous operation that involves multiple Promises. Async/await allows you to write asynchronous code that is more readable and easier to understand.`,
+      `3. If you need to handle errors in a complex way, Promises might be a better choice. Promises provide a .catch() method that can be used to handle errors that occur during the execution of the Promise chain.`,
+      `4. If you need to work with non-Promise-based APIs or libraries, you might need to use Promises. Many APIs and libraries still use callbacks, which can be wrapped in Promises to make them easier to work with.`,
+      `In general, async/await is a more modern and readable way of handling asynchronous code, while Promises are a more low-level mechanism for handling asynchronous operations. Both Promises and async/await have their use cases and can be used together depending on the requirements of your application.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 53,
+    question: `53. Uses of promises.all, promise.any ?`,
+    answer: [
+      `Both Promise.all() and Promise.any() are methods available on the Promise object in JavaScript, and they are useful for handling multiple Promises at once.`,
+      `Promise.all() takes an array of Promises and returns a Promise that resolves with an array of the results when all of the Promises in the array have resolved. If any Promise in the array rejects, the returned Promise will reject with the reason of the first Promise that was rejected.`,
+      `Promise.any() is a new method introduced in ES2021 that takes an array of Promises and returns a Promise that resolves with the value of the first Promise in the array that resolves. If all Promises in the array reject, the returned Promise will reject with an AggregateError containing the reasons of all rejected Promises.`,
+      `In summary, Promise.all() is useful when you want to wait for multiple Promises to resolve before continuing, while Promise.any() is useful when you want to get the result of the first Promise that resolves out of multiple Promises.`,
+    ],
+    code: `//**Here's an example of using Promise.all():**//
+
+const promise1 = Promise.resolve(1);
+const promise2 = Promise.resolve(2);
+const promise3 = Promise.resolve(3);
+
+Promise.all([promise1, promise2, promise3])
+  .then(values => console.log(values)); // [1, 2, 3]
+
+
+//**Here's an example of using Promise.any():**//
+
+const promise1 = new Promise((resolve, reject) => setTimeout(reject, 1000, 'promise1 rejected'));
+const promise2 = Promise.resolve('promise2 resolved');
+const promise3 = new Promise((resolve, reject) => setTimeout(reject, 500, 'promise3 rejected'));
+
+Promise.any([promise1, promise2, promise3])
+  .then(value => console.log(value)) // 'promise2 resolved'
+  .catch(reasons => console.log(reasons)) // AggregateError: All promises were rejected
+
+  
 `,
     video: ``,
   },
