@@ -1039,6 +1039,314 @@ Promise.any([promise1, promise2, promise3])
 `,
     video: ``,
   },
+  {
+    id: 54,
+    question: `54. Difference between function expression and function declaration ?`,
+    answer: [
+      `Function declarations are hoisted, while function expressions are not.`,
+      `Function declarations define named functions, while function expressions can define anonymous functions or named functions assigned to a variable.`,
+      `Function expressions can be used as part of an expression, while function declarations can only be used as standalone statements.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 55,
+    question: `55. About "This" Output`,
+    answer: [],
+    code: `// ***regular function*** //
+const obj = {
+  name: "John",
+  greet: function() {
+    console.log(Hello, {this.name});
+  }
+};
+
+obj.greet(); // output: Hello, John
+
+const func = obj.greet;
+func(); // output: Hello, undefined
+-----------------------------------------
+
+// ***arrow function*** //
+const obj = {
+  name: "John",
+  greet: function() {
+    const func = () => {
+      console.log(Hello, {this.name});
+    };
+    func();
+  }
+};
+obj.greet(); // output: Hello, John
+
+
+const obj = {
+  name: "John",
+  greet: () => {
+    console.log(Hello, {this.name});
+  }
+};
+obj.greet(); // output: Hello, undefined
+
+When using an arrow function as a method of an object, 
+this is lexically scoped to the enclosing scope, 
+which is the global scope in this case 
+(since the arrow function is defined at the top level). 
+Therefore, this.name will refer to the name property of the global object,
+ which is undefined since it doesn't exist. 
+ So the output of obj.greet() will be Hello, undefined.
+
+-----------------------------------------
+
+
+// ***Case 1: Global scope*** //
+console.log(this); // output: Window (in browser) or global (in Node.js)
+-----------------------------------------
+
+
+// ***Case 2: Regular function with implicit binding*** //
+const person = {
+  name: "John",
+  greet: function() {
+    console.log(Hello, {this.name});
+  }
+};
+
+person.greet(); // output: Hello, John
+-----------------------------------------
+
+
+// ***Case 3: Regular function with explicit binding*** //
+function greet() {
+  console.log(Hello, {this.name});
+}
+
+const person = { name: "John" };
+
+greet.call(person); // output: Hello, John
+greet.apply(person); // output: Hello, John
+
+const boundGreet = greet.bind(person);
+boundGreet(); // output: Hello, John
+-----------------------------------------
+
+
+// ***Case 4: Constructor functions*** //
+const person = {
+  name: "John",
+  greet: function() {
+    const func = () => {
+      console.log(Hello, {this.name});
+    };
+    func();
+  }
+};
+person.greet(); // output: Hello, John
+
+
+const person = {
+  name: "John",
+  greet: () => {
+    console.log(Hello, {this.name});
+  }
+};
+person.greet(); // output: Hello, undefined
+
+-----------------------------------------
+
+// **Case 5: Arrow functions** //
+const person = {
+  name: "John",
+  greet: function() {
+    const func = () => {
+      console.log(Hello, {this.name});
+    };
+    func();
+  }
+};
+
+person.greet(); // output: Hello, John
+-----------------------------------------
+
+
+// ***Case 6: DOM event listeners*** //
+const button = document.querySelector("button");
+button.addEventListener("click", function() {
+  console.log(this); // output: the <button> element that fired the event
+});
+-----------------------------------------
+
+// ***Case 7: Function called without a context*** //
+function greet() {
+  console.log(this);
+}
+
+greet(); // output: undefined in strict mode, Window (in browser) or global (in Node.js) in non-strict mode
+-----------------------------------------
+
+
+// ***Case 8: Arrow function with no enclosing scope*** //
+const func = () => {
+  console.log(this);
+};
+
+func(); // output: undefined
+-----------------------------------------
+
+
+// ***Case 9: Object property with undefined value*** //
+const obj = {
+  prop: undefined,
+  func: function() {
+    console.log(this);
+  }
+};
+
+obj.func(); // output: undefined
+-----------------------------------------
+
+
+// ***Case 10: Event listeners*** //
+const button = document.querySelector("button");
+
+button.addEventListener("click", function() {
+  console.log(this); // output: <button> element that fired the event
+});
+
+const func = button.addEventListener("click", function() {
+  console.log(this); // output: undefined
+}.bind(this));
+
+`,
+    video: ``,
+  },
+  {
+    id: 56,
+    question: `56. Debouncing in JavaScript ?`,
+    answer: [
+      `Debouncing is a technique in JavaScript programming that is used to limit the number of times a function is called. It is often used in scenarios where a function may be called multiple times in quick succession, such as when the user is typing into a search bar or resizing a window.`,
+      `The basic idea behind debouncing is to delay the execution of a function until after a certain period of time has passed since the last time it was called. If the function is called again before this time period has elapsed, the timer is reset and the function is delayed again.`,
+    ],
+    code: `function debounce(func, delay) {
+  let timeoutId;
+  return function() {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(function() {
+      func.apply(context, args);
+    }, delay);
+  };
+}
+
+
+const button = document.querySelector('button');
+
+function handleClick() {
+  console.log('Button clicked!');
+}
+
+const debouncedClick = debounce(handleClick, 1000);
+
+button.addEventListener('click', debouncedClick);
+
+`,
+    video: ``,
+  },
+  {
+    id: 57,
+    question: `57. what is the use of dangeroslySetInnerHTML ?`,
+    answer: [
+      `dangerouslySetInnerHTML is a React method that allows you to render raw HTML content within a component. The name "dangerously" is used because it's easy to misuse this method and introduce security vulnerabilities, such as cross-site scripting (XSS) attacks, if you're not careful.`,
+      `The dangerouslySetInnerHTML method is typically used when you need to render HTML content that has been generated dynamically, such as content retrieved from a database or API. By default, React escapes any HTML tags in the content to prevent XSS attacks, but if you use dangerouslySetInnerHTML, you can tell React to render the HTML as-is.`,
+      `It's important to note that using dangerouslySetInnerHTML can introduce security vulnerabilities if you're not careful. You should always validate and sanitize any HTML content that you're rendering with this method to prevent XSS attacks. Additionally, you should only use this method when you trust the source of the HTML content, such as when rendering content that you've generated yourself.`,
+    ],
+    code: `function MyComponent(props) {
+  return (
+    <div dangerouslySetInnerHTML={{ __html: props.html }}></div>
+  );
+}
+`,
+    video: ``,
+  },
+  {
+    id: 58,
+    question: `58. why first query outout is 1 and second query output is undefined ?`,
+    answer: [
+      `In the first query, the output is 1 because the variable i is declared using the var keyword inside the function x(), which creates a variable with function scope. When the setTimeout function is called, it schedules the execution of the anonymous function inside it after a delay of 1000 milliseconds. By this time, the var i = 1 statement has already been executed, and the value of i is 1. So, when the anonymous function inside setTimeout is executed, it logs the value of i, which is 1.`,
+      `In the second query, the output is undefined because the variable x is declared using the var keyword inside the function xyx(), which creates a variable with function scope. When the console.log(x) statement is executed, the JavaScript interpreter first looks for a locally scoped variable named x within the xyx() function. Since the variable x is declared locally within xyx(), but has not yet been assigned a value, the value of x is undefined at that point. So, when console.log(x) is executed, it outputs undefined.`,
+    ],
+    code: `function x() {
+      setTimeout(function () {
+        console.log(i);
+      }, 1000);
+      var i = 1;
+    }
+    x(); //Output: 1
+
+
+var x = 21;
+var xyx = function () {
+  console.log(x);
+  var x = 20;
+};
+xyx(); //Output: undefined
+    `,
+    video: ``,
+  },
+  {
+    id: 59,
+    question: `59. is that possible to change the name of object which is created using "const" ?`,
+    answer: [
+      `even though a is declared as a constant, it is still possible to modify the properties of the object it points to. Therefore, in the next line, the property name of the object is changed to "Coforge" using the dot notation to access the property.`,
+      `Since a is still pointing to the same object in memory, the console.log(a.name) statement will output "Coforge", which is the new value assigned to the name property. The output will be:`,
+      ``,
+    ],
+    code: `const a = {
+  name: "NIIT",
+  location: "Noida"
+};
+
+a.name = "Coforge";
+console.log(a.name); //Output: Coforge
+`,
+    video: ``,
+  },
+  {
+    id: 60,
+    question: `60. What is the ouput of below code ?`,
+    answer: [],
+    code: `let a = [1, 2];
+a.length = 0;
+console.log(a); //Output: []
+`,
+    video: ``,
+  },
+  {
+    id: 61,
+    question: `61. What is the output of the following code when using var and let, and why do they produce different outputs?`,
+    answer: [
+      `With var:`,
+      `The output of this code will be 10 lines of "10", each printed with a delay of 0 milliseconds due to the way the setTimeout() function works with var. This happens because with var, the variable i is declared with function scope, not block scope. When the setTimeout() function is called, it schedules the execution of the anonymous arrow function inside it after a delay of 0 milliseconds (due to the default timeout value of setTimeout()). By the time the anonymous arrow function is executed, the for loop has already completed, and the value of i is 10. Therefore, when the anonymous arrow function inside setTimeout() is executed, it logs the value of i, which is 10 in all cases, since that was the final value of i at the end of the loop.`,
+      `With let:`,
+      `If you replace var with let in the original code, the output will be 10 lines of 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 respectively. This happens because with let, the variable i is declared with block scope, which means it's a new i for each iteration of the loop. When the setTimeout() function is called, it schedules the execution of the anonymous arrow function inside it after a delay of 0 milliseconds. At that point, each iteration of the loop has its own value of i. Therefore, when the anonymous arrow function inside setTimeout() is executed, it logs the value of the i variable that was created in the corresponding iteration of the loop, resulting in the expected output of 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 respectively.`,
+    ],
+    code: `for (var i = 0; i < 10; i++) {
+  setTimeout(() => {
+    console.log(i);
+  });
+} // Output:  10 lines of "10"
+
+
+for (let i = 0; i < 10; i++) {
+  setTimeout(() => {
+    console.log(i);
+  });
+} // Output:  1,2,3...9
+`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {

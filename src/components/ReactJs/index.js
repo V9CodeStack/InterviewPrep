@@ -769,6 +769,81 @@ class App extends Component {
 export default App;`,
     video: ``,
   },
+  {
+    id: 24,
+    question: `24. why de we need keys in react ?`,
+    answer: [
+      `In React, keys are used to identify individual elements in a list of items, such as when rendering an array of items in a map function. Keys are important because they help React to efficiently update the UI when the list of items changes.`,
+      `When React renders a list of items, it needs a way to determine which items have changed, been added, or been removed. Without keys, React would have to re-render the entire list every time it changes, even if only a single item has been added or removed. This can be inefficient and slow, especially for large lists.`,
+      `By assigning a unique key to each item in the list, React can track which items have changed and update only those items that need to be updated. This helps to improve the performance of the application and reduce the amount of work that React needs to do.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 25,
+    question: `25. if we render a parent node does all of its child re-render?`,
+    answer: [
+      `In React, when a parent component re-renders, it will also cause all of its child components to re-render, unless you have implemented some optimization techniques.`,
+      `This happens because React follows a "top-down" approach to rendering, where changes in the state or props of a parent component can propagate down to its child components. When a parent component re-renders, React will first update the virtual DOM tree for the parent component, and then recursively update the virtual DOM trees for all of its child components.`,
+      `However, React provides several techniques to optimize the rendering process and avoid unnecessary re-renders of child components. For example, you can use the shouldComponentUpdate lifecycle method or the React.memo higher-order component to prevent a component from re-rendering if its props or state have not changed.`,
+      `In addition, React also provides the React.Fragment component, which allows you to group a list of child components without introducing a new parent node in the DOM. This can help to avoid unnecessary DOM nodes and improve performance.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 26,
+    question: `26. uses of Hooks and refs ?`,
+    answer: [
+      `Hooks are functions that allow you to use React features like state and lifecycle methods in functional components. Prior to the introduction of hooks, these features were only available in class components.`,
+      `1. Reusability: Hooks allow you to reuse stateful logic across multiple components, which can help to reduce duplication and make your code more modular.`,
+      `2. Simplicity: Hooks simplify the code by removing the need to create and manage class components.`,
+      `3. Performance: Hooks can help to optimize performance by reducing the number of unnecessary re-renders.`,
+      `Commonly used Hooks include useState, useEffect, useContext, useReducer, useMemo, and useCallback.`,
+      ``,
+      `Refs provide a way to access the DOM nodes or components in a React application. Refs can be used to manipulate the DOM directly or to access child components from a parent component.`,
+      `1. Managing focus: Refs can be used to manage focus in a component, such as setting focus to a specific input field or button.`,
+      `2. Animations: Refs can be used to trigger animations on specific elements, such as when a user scrolls or hovers over a certain area of the page.`,
+      `3. Data fetching: Refs can be used to fetch data from APIs or external sources and update the state of a component.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 27,
+    question: `27. Difference types of rendering in ReactJS?`,
+    answer: [
+      `In ReactJS, there are three main types of rendering: client-side rendering, server-side rendering, and static rendering.`,
+      `Client-side rendering (CSR):
+      This is the default rendering approach in ReactJS. In client-side rendering, the browser loads a single HTML file that includes the JavaScript code for the application. The JavaScript code is responsible for rendering the UI and updating it when the state of the application changes. The main advantage of client-side rendering is that it provides a smooth and responsive user experience.`,
+      `Server-side rendering (SSR):
+      In server-side rendering, the HTML content of a web page is generated on the server and sent to the browser. The JavaScript code is executed on the server to generate the HTML content. SSR improves the initial load time of a web page, as the browser receives the HTML content faster than in CSR. It also helps with search engine optimization (SEO), as search engines can crawl the HTML content generated on the server.`,
+      `Static rendering:
+      Static rendering is a variation of server-side rendering, where the HTML content is generated at build time and saved as static files. When a user requests a page, the static HTML file is served directly, without any server-side processing. Static rendering provides the best performance, as the HTML content is already generated and there is no need for any server-side processing.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 28,
+    question: `28. Synthetic Event in ReactJS ?`,
+    answer: [
+      `When an event is triggered on a React component, such as a mouse click, keyboard press, or form submission, React creates a synthetic event object and passes it as an argument to the event handler function. The synthetic event object contains information about the event, such as the target element, the type of event, and any relevant data.`,
+      `One of the main benefits of using synthetic events is that they are optimized for performance. Instead of creating a new event object for each event, React reuses the same object and updates its properties for each new event. This helps to reduce memory usage and improve performance.`,
+      `Another benefit of synthetic events is that they are consistent across different browsers. Since the synthetic event system is implemented in React, developers can rely on consistent behavior across different browsers and don't have to worry about browser-specific quirks.`,
+      `In this example, the handleClick function is defined to handle the click event on a button element. When the button is clicked, React creates a synthetic event object and passes it as an argument to the handleClick function. The event.target property of the synthetic event object contains a reference to the button element that was clicked.`,
+    ],
+    code: `function handleClick(event) {
+  console.log('Clicked on', event.target);
+}
+
+function MyComponent() {
+  return <button onClick={handleClick}>Click me</button>;
+}
+`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {

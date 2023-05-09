@@ -718,6 +718,24 @@ let result = moveZerosToEnd(arr);
 console.log(result); // [1, 2, 3, 4, 5, 0, 0, 0, 0]`,
     pythonCode: ``,
   },
+  {
+    id: 28,
+    question: `28. Input: searchBoxKey  Output: search_Box_Key`,
+    javaScriptCode: `const str = "searchBoxKey";
+let result = "";
+
+for (let i = 0; i < str.length; i++) {
+  if (str[i] === str[i].toUpperCase()) {
+    result = result + "_" + str[i];
+  } else {
+    result = result + str[i];
+  }
+}
+
+console.log(result); //search_Box_Key
+`,
+    pythonCode: ``,
+  },
 ];
 
 const ObjBluePrint = {
