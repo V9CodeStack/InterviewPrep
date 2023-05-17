@@ -1347,6 +1347,61 @@ for (let i = 0; i < 10; i++) {
 `,
     video: ``,
   },
+  {
+    id: 62,
+    question: `62. Explain the below code ?`,
+    answer: [
+      `The code you provided is an immediately invoked function expression (IIFE) that declares a variable a and assigns it the value of b, which is set to 5. In JavaScript, when a variable is declared without the var, let, or const keyword, it becomes implicitly global. In this case, b is declared without var, making it a global variable.`,
+      ` it's important to note that b would be accessible as a global variable outside the function scope, while a would only be accessible within the scope of the IIFE.`,
+    ],
+    code: `(function(){
+  var a = b = 5;
+})()`,
+    video: ``,
+  },
+  {
+    id: 63,
+    question: `63. Explain below code ?`,
+    answer: [
+      `var a = 3;: This line declares a variable a and assigns it the initial value of 3.`,
+      `var b = a++;: In this line, the current value of a (which is 3) is assigned to the variable b. The ++ operator is the post-increment operator, which means it increments the value of a after the assignment takes place. Therefore, b receives the initial value of a, which is 3, and then a is incremented to 4.`,
+      `var c = ++a;: Here, the ++ operator is the pre-increment operator, which increments the value of a before the assignment. So, a is incremented to 5, and then that new value (5) is assigned to the variable c.`,
+      `console.log(a, b, c);: This line outputs the values of a, b, and c to the console. At this point, a is 5 (as it was incremented in the previous step), b is 3 (as it received the initial value of a before the increment), and c is 5 (as it received the incremented value of a).`,
+      `In summary, the code snippet demonstrates the difference between the post-increment (a++) and pre-increment (++a) operators. The post-increment operator (a++) assigns the current value of a to the variable and then increments a. On the other hand, the pre-increment operator (++a) increments a and then assigns the new value to the variable.`,
+    ],
+    code: `var a = 3;
+var b = a++;
+var c = ++a;
+console.log(a, b, c); // Output: a=5; b=3; c=5;`,
+    video: ``,
+  },
+  {
+    id: 64,
+    question: `64. What is Generator Function in Javascript ?`,
+    answer: [
+      `In JavaScript, a generator function is a special type of function that can be paused and resumed during its execution. It allows you to define an iterative algorithm by writing code that can yield multiple values over time, rather than returning a single value like regular functions.`,
+      `Generator functions are useful for implementing lazy iteration and can be used to create custom iterable objects. They provide a powerful mechanism for controlling and generating sequences of values in a controlled and efficient manner.`,
+    ],
+    code: `function numberGenerator() {
+  return 1;
+  return 2;
+}
+console.log(numberGenerator()); // 1 Normal function will not execute 2nd return statement
+
+// Convert any Function into generator
+function* numberGeneratorWithGenerator() {
+  yield 1;
+  yield 2;
+}
+
+const result = numberGeneratorWithGenerator();
+
+console.log(result.next().value); // 1
+console.log(result.next().value); // 2
+console.log(result.next().value); // undefined
+`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {

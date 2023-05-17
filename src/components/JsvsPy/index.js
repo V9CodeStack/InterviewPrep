@@ -736,6 +736,45 @@ console.log(result); //search_Box_Key
 `,
     pythonCode: ``,
   },
+  {
+    id: 29,
+    question: `29. Output of Below Code ?`,
+    javaScriptCode: `const obj = {
+  name: "vinay",
+  age: 20,
+};
+
+console.log(Object.keys(obj)); //[ 'name', 'age' ]
+
+const output = Object.keys(obj).map((value) => [value, obj[value]]);
+
+console.log(output); // [ [ 'name', 'vinay' ], [ 'age', 20 ] ]
+`,
+    pythonCode: ``,
+  },
+  {
+    id: 30,
+    question: `30. Output of Below Code?`,
+    javaScriptCode: `function numberGenerator() {
+  return 1;
+  return 2;
+}
+console.log(numberGenerator()); // 1 normal function will not execute 2nd return statement
+
+// Convert any Function into generator
+function* numberGeneratorWithGenerator() {
+  yield 1;
+  yield 2;
+}
+
+const result = numberGeneratorWithGenerator();
+
+console.log(result.next().value); // 1
+console.log(result.next().value); // 2
+console.log(result.next().value); // undefined
+`,
+    pythonCode: ``,
+  },
 ];
 
 const ObjBluePrint = {
