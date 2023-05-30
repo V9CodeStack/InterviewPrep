@@ -844,6 +844,115 @@ function MyComponent() {
 `,
     video: ``,
   },
+  {
+    id: 29,
+    question: `29. how to do you handle API calls on your React App ?`,
+    answer: [
+      `Fetch API: The Fetch API is a built-in web API in modern browsers that allows you to make HTTP requests. You can use the Fetch API with the fetch() function to send requests and handle responses. This approach is relatively straightforward and doesn't require any additional libraries.`,
+      `Axios: Axios is a popular third-party library that provides a simple and powerful way to make HTTP requests. It offers features like interceptors, request cancellation, and automatic JSON parsing. You need to install Axios as a dependency in your project before using it.`,
+      `Use a State Management Library: If your application requires global state management or you need to share API data across multiple components, you can consider using a state management library like Redux or MobX. These libraries provide a centralized state container and offer mechanisms to handle asynchronous API calls and store the data in the state.`,
+      `React Hooks: With the introduction of React Hooks, you can use the useState and useEffect hooks to handle API calls within functional components. You can use useState to manage the state of the fetched data, and useEffect to initiate the API call and update the state based on the response.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 30,
+    question: `30. how will you chain multiple API calls kthat is depending on the previous request ?`,
+    answer: [
+      `To chain multiple API calls where each subsequent call depends on the response of the previous request, you can use promises or async/await syntax in JavaScript. Here's an example using async/await:`,
+      `In this example, each API call is performed one after the other using await. The await keyword halts the execution until the promise is resolved, allowing you to retrieve the response data. Once the response is obtained, you can process the data or use it to construct the URL for the subsequent API call.`,
+      `If any of the API calls fail, the control flow jumps to the catch block, where you can handle the error appropriately.`,
+    ],
+    code: `async function fetchData() {
+  try {
+    const response1 = await fetch('https://api.example.com/first');
+    const data1 = await response1.json();
+    
+    // Process data1
+    
+    const response2 = await fetch(https://api.example.com/second/{data1.id});
+    const data2 = await response2.json();
+    
+    // Process data2
+    
+    const response3 = await fetch(https://api.example.com/third/{data2.id});
+    const data3 = await response3.json();
+    
+    // Process data3
+    
+    // Continue chaining as needed
+  } catch (error) {
+    // Handle any errors
+  }
+}
+
+fetchData();
+`,
+    video: ``,
+  },
+  {
+    id: 31,
+    question: `31 how to avoid mutating an array when performing an operation?`,
+    answer: [
+      `Use Array Methods that Return a New Array: JavaScript provides several array methods that do not mutate the original array but instead return a new array with the desired modifications. Some commonly used methods include map(), filter(), concat(), and slice(). These methods create a new array based on the original array and the applied transformation or operation.`,
+      `Spread Syntax ( ... ): The spread syntax can be used to create a new array by spreading the elements of an existing array. By spreading the elements, you effectively create a new array with the same values as the original array.`,
+      `Array Destructuring: Array destructuring can also be used to create a new array by extracting the elements of an existing array. It allows you to assign the elements of an array to individual variables, which can then be used to create a new array if needed.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 32,
+    question: `32 why we should not update state directly?`,
+    answer: [
+      `Updating state directly is not recommended because it can lead to unexpected behavior and make it difficult to track changes in your application's data. Here are a few reasons why you should avoid updating state directly:`,
+      `React's State Management: React relies on the concept of state to manage and update the data of components. React components re-render when their state changes. If you directly modify the state object without using the appropriate mechanisms provided by React, such as setState or state hooks like useState, React will not be aware of the changes, and the component may not re-render as expected.`,
+      `Immutability and Predictability: React promotes the idea of immutability, which means that the state should not be modified directly, but rather a new copy of the state should be created with the desired changes. This ensures that the previous state is preserved and can be compared to determine if a re-render is necessary. Modifying the state directly can lead to unpredictable outcomes and make it challenging to reason about the state changes.`,
+      `Performance and Optimizations: React implements various performance optimizations under the hood, such as virtual DOM diffing and batching of state updates. By using the correct state update mechanisms provided by React, such as setState or state hooks, React can optimize and batch the state updates for efficient rendering. Directly modifying the state may bypass these optimizations, resulting in unnecessary re-renders or inefficient rendering cycles.`,
+      `Debugging and Error Tracking: Updating state directly can make it harder to debug and track errors. React provides tools like the React DevTools extension and error messages that are designed to work with its state management mechanisms. If you update state directly, you may lose the ability to track and inspect the changes, making it more challenging to diagnose issues.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 33,
+    question: `33 Major difference between ES5 and ES6 javascript ?`,
+    answer: [
+      `Variable Declarations:
+    ES5: Variables were typically declared using the var keyword, which has function-level scope......
+    ES6: Introduced let and const for declaring variables. let has block-level scope, allowing better control over variable visibility and avoiding issues like variable hoisting. const is used for declaring constants with block-level scope, and their values cannot be reassigned.`,
+      `Arrow Functions:
+      ES5: Traditional function expressions and function declarations were used.....
+      ES6: Introduced arrow functions (=> syntax), providing a more concise and lexical this binding. Arrow functions don't bind their own this, arguments, and super keywords, but instead inherit them from the enclosing context.`,
+      `Classes:
+      ES5: Used constructor functions and prototypes for defining and inheriting classes....
+      ES6: Introduced a class syntax, providing a more familiar and simpler syntax for defining classes and creating class instances. It also introduced the extends keyword for class inheritance and the super keyword for calling the parent class's constructor.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 34,
+    question: `34 what happens if we call setState in render() ?`,
+    answer: [
+      `If you call setState within the render method of a React component, it can lead to an undesirable behavior known as an update loop or an infinite loop. This occurs because calling setState triggers a re-render of the component, and if setState is called within the render method, it will result in an endless cycle of re-renders.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 35,
+    question: `35 can we have multiple stores in redux ?`,
+    answer: [
+      `In Redux, the standard approach is to have a single store that holds the complete state of your application. The Redux store is responsible for managing the state and dispatching actions to update the state. While it is technically possible to have multiple Redux stores in an application, it is generally not recommended unless you have a specific and compelling reason to do so.`,
+      `Having multiple stores can make your application more complex to manage and can lead to issues with data consistency and synchronization. Redux is designed to work with a single store, and the provided tools and middleware are built around this assumption.`,
+      `Instead of using multiple stores, Redux provides mechanisms to handle different parts of the state and modularize your application. You can use features like reducers, actions, and selectors to partition and organize your state based on different domains or slices of your application.`,
+      `If you find that your application requires separate stores for distinct and independent sections, it might be worth considering alternative state management approaches like using context API, local component state, or adopting different architectural patterns that better suit your specific requirements. However, keep in mind that introducing multiple stores can add complexity and should be carefully evaluated to ensure it is necessary for your use case.`,
+    ],
+    code: ``,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {

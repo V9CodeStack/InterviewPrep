@@ -1402,6 +1402,144 @@ console.log(result.next().value); // undefined
 `,
     video: ``,
   },
+  {
+    id: 65,
+    question: `65. console.log({} === {})? what is the output ?`,
+    answer: [
+      `The output of the code console.log({} === {}) would still be false.`,
+      `In JavaScript, the === operator checks for strict equality between two objects. When comparing two objects with ===, it checks if the objects being compared are references to the exact same object in memory.`,
+      `In this case, {} creates two separate object instances, and even though they may have the same properties and values, they are distinct objects occupying different memory locations. Therefore, the comparison evaluates to false because the two objects are not the same object in memory.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 66,
+    question: `66 what is Minification ?`,
+    answer: [
+      `Minification is the process of reducing the size of a file by removing unnecessary characters and whitespace without affecting its functionality. It is commonly applied to JavaScript, CSS, and HTML files used in web development to optimize the delivery of web assets to users.`,
+      `Removal of Whitespace and Comments: Extra spaces, line breaks, and comments that are not required for the code's functionality are removed. This includes both single-line and multi-line comments.`,
+      `Shortening Variable and Function Names: Longer variable and function names are replaced with shorter, typically single-character, names. This reduces the size of the code without affecting its behavior. This technique is known as variable/function name mangling.`,
+      `Compression of Textual Content: The text content of the file is compressed using algorithms like gzip or Brotli. These algorithms analyze the repetitive patterns in the text and replace them with shorter representations, further reducing the file size.`,
+      `Concatenation and Combining Files: In web development, multiple JavaScript or CSS files may be combined into a single file to reduce the number of HTTP requests required to load the page. This reduces the overhead associated with individual file requests.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 67,
+    question: `67 what is use of Minification ?`,
+    answer: [
+      `Reduced Network Transfer: Smaller file sizes lead to faster file transfers over the network, resulting in improved website performance. This is especially important for users with slower internet connections or accessing websites from mobile devices.`,
+      `Faster Parsing: Removing unnecessary characters and reducing the overall size of the code results in faster parsing and execution by the browser. This helps to reduce the time taken to load and render web pages.`,
+      `Bandwidth Savings: Minification reduces the amount of data transferred between servers and clients, resulting in reduced bandwidth usage and cost savings, especially for high-traffic websites.`,
+      `Improved Caching: Minified files can be cached more effectively by web browsers and content delivery networks (CDNs) because they have smaller file sizes. This leads to faster subsequent page loads for returning users.`,
+      `Minification is commonly performed as part of the build process or deployment pipeline for web applications. There are several minification tools and libraries available that automate the process and make it easy to integrate into the development workflow.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 68,
+    question: `68 what is IIFEs ? one usecase of IIFE ?`,
+    answer: [
+      `IIFE stands for Immediately Invoked Function Expression. It is a JavaScript function that is executed immediately after it is defined. The main purpose of using an IIFE is to create a new scope for the function, preventing variable name conflicts and keeping the global scope clean.`,
+      `The advantage of using an IIFE in this case is that the count variable is not accessible from the outside, preventing direct modification of the counter value. The only way to interact with the counter is through the methods exposed in the returned object.`,
+      `IIFEs are also commonly used in module patterns and older JavaScript code where module systems were not available, as they provide a way to achieve encapsulation and maintain private state within a function scope.`,
+    ],
+    code: `var counter = (function() {
+  var count = 0;  // Private variable
+
+  function increment() {
+    count++;
+  }
+
+  function decrement() {
+    count--;
+  }
+
+  function getCount() {
+    return count;
+  }
+
+  // Expose public interface
+  return {
+    increment: increment,
+    decrement: decrement,
+    getCount: getCount
+  };
+})();
+
+console.log(counter.getCount()); // 0
+counter.increment();
+counter.increment();
+console.log(counter.getCount()); // 2
+`,
+    video: ``,
+  },
+  {
+    id: 68,
+    question: `68 what is pass by value / pass by reference ?`,
+    answer: [
+      `"Pass by value" and "pass by reference" are two different approaches for passing arguments to functions in programming languages. They determine how the values of variables are accessed and modified within a function. Let's explore each concept:`,
+      `In pass by value, a copy of the value of the variable is passed to the function. Any modifications made to the parameter inside the function do not affect the original variable outside the function.`,
+      `Typically, primitive data types such as numbers, booleans, and strings are passed by value.`,
+    ],
+    code: `function increment(num) {
+  num += 1;
+  console.log(num); // 6
+}
+
+var numValue = 5;
+increment(numValue);
+console.log(numValue); // 5 (unchanged)
+`,
+    video: ``,
+  },
+  {
+    id: 69,
+    question: `69. what is pass by reference ?`,
+    answer: [
+      `In pass by reference, a reference to the original variable is passed to the function. Any modifications made to the parameter inside the function will affect the original variable outside the function.`,
+      `When a function receives a reference to an object or array, modifications made to the parameter inside the function will be reflected in the caller's scope.`,
+      `Pass by reference is typically used for complex data types like objects and arrays.`,
+    ],
+    code: `function updateArray(arr) {
+  arr.push(4);
+  console.log(arr); // [1, 2, 3, 4]
+}
+
+var arrayRef = [1, 2, 3];
+updateArray(arrayRef);
+console.log(arrayRef); // [1, 2, 3, 4] (modified)
+`,
+    video: ``,
+  },
+  {
+    id: 70,
+    question: `70 what is difference b/w await and yield keyword ?`,
+    answer: [
+      `The await keyword is used in asynchronous functions, which are functions that perform asynchronous operations and return promises. It can only be used inside an async function.`,
+      `When await is used before a promise, it pauses the execution of the async function until the promise is fulfilled or rejected.`,
+      `The yield keyword is used in generator functions to pause the execution of the function and produce a value.`,
+      `Generator functions are special functions that can be paused and resumed, allowing for the generation of a sequence of values over time.`,
+      `Each time the yield keyword is encountered in a generator function, it pauses the function's execution and returns a value. The function can later be resumed from where it left off.`,
+      `Generator functions are typically used with iterators to generate a sequence of values lazily, on-demand.`,
+      `In summary, await is used in asynchronous functions to pause and wait for promises to resolve, while yield is used in generator functions to pause and produce a sequence of values. Both keywords help manage asynchronous and sequential code execution, but in different contexts.`,
+    ],
+    code: `function* generateNumbers() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const generator = generateNumbers();
+console.log(generator.next().value); // 1
+console.log(generator.next().value); // 2
+console.log(generator.next().value); // 3
+`,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {
