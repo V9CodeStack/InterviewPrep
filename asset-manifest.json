@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/InterviewPrep/static/css/main.750eb414.css",
-    "main.js": "/InterviewPrep/static/js/main.be924246.js",
+    "main.js": "/InterviewPrep/static/js/main.fddf1374.js",
     "index.html": "/InterviewPrep/index.html",
     "main.750eb414.css.map": "/InterviewPrep/static/css/main.750eb414.css.map",
-    "main.be924246.js.map": "/InterviewPrep/static/js/main.be924246.js.map"
+    "main.fddf1374.js.map": "/InterviewPrep/static/js/main.fddf1374.js.map"
   },
   "entrypoints": [
     "static/css/main.750eb414.css",
-    "static/js/main.be924246.js"
+    "static/js/main.fddf1374.js"
   ]
 }
