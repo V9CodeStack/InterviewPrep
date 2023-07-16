@@ -775,6 +775,512 @@ console.log(result.next().value); // undefined
 `,
     pythonCode: ``,
   },
+  {
+    id: 31,
+    question: `31. Find Missing Number in Sequency ?`,
+    javaScriptCode: `let arr = [1, 4, 5, 2, 8];
+let n = 10;
+let result = [];
+
+for (let i = 1; i < n; i++) {
+  if (arr.indexOf(i) === -1) {
+    result.push(i);
+  }
+}
+
+console.log(result); // [3, 6, 7, 9]
+`,
+    pythonCode: ``,
+  },
+  {
+    id: 32,
+    question: `32. Sort array by even and odd numbers ?`,
+    javaScriptCode: `let arr = [9, 8, 6, 5, 2, 4, 1, 10];
+
+function sortByEvenOdd(arr) {
+  const even = arr.filter((item) => item % 2 === 0).sort((a, b) => a - b);
+  const odd = arr.filter((item) => item % 2 !== 0).sort((a, b) => a - b);
+
+  return [...even, ...odd];
+}
+
+console.log(sortByEvenOdd(arr)); //  [2, 4, 6, 8, 10, 1, 5, 9]`,
+    pythonCode: ``,
+  },
+  {
+    id: 33,
+    question: `33. Find Longest String in Array ?`,
+    javaScriptCode: `let arr = ["HTML", "CSS", "JAVASCRIPT"];
+
+function findLongestArray(arr) {
+  let result = "";
+  let len = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > len) {
+      result = arr[i];
+      len = arr[i].length;
+    }
+  }
+  return result;
+}
+
+console.log(findLongestArray(arr)); // JAVASCRIPT`,
+    pythonCode: ``,
+  },
+  {
+    id: 34,
+    question: `34. Sort array of Strings by word length ?`,
+    javaScriptCode: `let arr = ["HTML", "CSS", "JAVASCRIPT", "python", "PHP", "Java"];
+
+function sortByWordLength(arr) {
+  let result = arr.sort((a, b) => a.length - b.length);
+
+  return result;
+}
+
+console.log(sortByWordLength(arr)); // ['CSS', 'PHP', 'HTML', 'Java', 'python', 'JAVASCRIPT']`,
+    pythonCode: ``,
+  },
+  {
+    id: 35,
+    question: `35. How to check two array are equal or not?`,
+    javaScriptCode: `let arr1 = [100, 200, 300];
+let arr2 = [100, 500, 300];
+
+console.log(JSON.stringify(arr1) === JSON.stringify(arr2)); // false`,
+    pythonCode: ``,
+  },
+  {
+    id: 36,
+    question: `36. Remove Duplicates in array of objects?`,
+    javaScriptCode: `let obj = [
+  { id: 1, name: "John", price: 10 },
+  { id: 2, name: "Jane", price: 20 },
+  { id: 1, name: "John", price: 10 },
+  { id: 3, name: "Mike", price: 30 },
+  { id: 4, name: "Jane", price: 40 },
+  { id: 3, name: "Mike", price: 30 },
+];
+
+function removeDuplicates(obj) {
+  let arr = obj.map((item) => JSON.stringify(item));
+  let uniqueArr = Array.from(new Set(arr));
+  let result = uniqueArr.map((item) => JSON.parse(item));
+  return result;
+}
+
+console.log(removeDuplicates(obj));
+// Output:
+[
+  { id: 1, name: "John", price: 10 },
+  { id: 2, name: "Jane", price: 20 },
+  { id: 3, name: "Mike", price: 30 },
+  { id: 4, name: "Jane", price: 40 },
+];
+`,
+    pythonCode: ``,
+  },
+  {
+    id: 37,
+    question: `37. Output of Below Code ?`,
+    javaScriptCode: `// Question 1
+function fruit() {
+  console.log(name); // undefined
+  console.log(price); // Error
+
+  var name = "apple";
+  let price = 23;
+}
+fruit();
+
+///////////////////////////////////////////////////////////////
+
+// Question 2
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), i); // 3 3 3
+}
+
+///////////////////////////////////////////////////////////////
+
+// Question 3
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), i); // 0 1 2
+}
+
+///////////////////////////////////////////////////////////////
+
+// Question 4
+console.log(+true); // 1
+console.log(typeof +true); // Number
+
+
+///////////////////////////////////////////////////////////////
+
+// Question 5
+console.log(!"vinay"); // false
+console.log(typeof "vinay"); // String
+
+///////////////////////////////////////////////////////////////
+
+// Question 6
+let data = "size";
+const bird = {
+  size: "small",
+};
+console.log(bird[data]); // small
+console.log(bird["size"]); // small
+console.log(bird.size); // small
+console.log(bird.data); // undefined
+
+
+///////////////////////////////////////////////////////////////
+
+// Question 7
+let c = { name: "vinay" };
+let d;
+d = c;
+c.name = "kumar";
+console.log(d.name); // kumar
+
+///////////////////////////////////////////////////////////////
+
+// Question 8
+var x;
+var x = 10;
+console.log(x); //10
+
+///////////////////////////////////////////////////////////////
+
+// Question 9
+var x;
+let x = 10;
+console.log(x); // Error (Identifier 'x' has already been declared)
+
+///////////////////////////////////////////////////////////////
+
+// Question 11
+let a = 3;
+let b = new Number(3);
+console.log(a == b); // true
+console.log(a === b); // false
+console.log(typeof b); // Object
+
+///////////////////////////////////////////////////////////////
+
+// Question 12
+function fruit() {
+  console.log("woof!"); // woof!
+}
+fruit.name = "apple";
+console.log(fruit()); // undefined
+
+///////////////////////////////////////////////////////////////
+
+// Question 13
+let number = 0;
+console.log(number++); // 0
+console.log(++number); // 2
+console.log(number); // 2
+
+///////////////////////////////////////////////////////////////
+
+// Question 14
+function getAge(...args) {
+  console.log(typeof args);
+}
+getAge(21); // Object
+
+///////////////////////////////////////////////////////////////
+
+// Question 15
+function getAge() {
+  "use strict";
+  age = 21;
+  console.log(age);
+}
+getAge(); // Error (age is not defined)
+
+///////////////////////////////////////////////////////////////
+
+// Question 16
+const sum = eval("10*10+5");
+console.log(sum); // 105
+
+///////////////////////////////////////////////////////////////
+
+// Question 20
+for (let i = 1; i < 5; i++) {
+  if (i === 3) continue;
+  console.log(i); // 1 2 4
+}
+
+// Question 21
+const foo = () => console.log("first");
+const bar = () => setTimeout(() => console.log("second"));
+const baz = () => console.log("Third");
+bar();
+foo();
+baz();
+
+//outPut:
+first
+Third
+second
+
+///////////////////////////////////////////////////////////////
+
+// Question 23
+const person = { name: "vinay" };
+function sayHi(age) {
+  return "{this.name} is {age}";
+}
+console.log(sayHi.call(person, 21)); // vinay is 21
+console.log(sayHi.bind(person, 21)); // ƒ sayHi(age) { return "{this.name} is {age}";}
+
+///////////////////////////////////////////////////////////////
+
+// Question 24
+function sayHi() {
+  return (() => 0)();
+}
+console.log(typeof sayHi()); // number
+
+///////////////////////////////////////////////////////////////
+
+// Question 25
+function sayHi() {
+  return () => 0;
+}
+console.log(typeof sayHi()); // function
+
+///////////////////////////////////////////////////////////////
+
+// Question 26
+console.log(typeof typeof 1); // string
+
+///////////////////////////////////////////////////////////////
+
+// Question 27
+const numbers = [1, 2, 3];
+numbers[9] = 11;
+console.log(numbers); // [1, 2, 3, empty × 6, 11]
+
+///////////////////////////////////////////////////////////////
+
+// Question 28
+const numbers = [1, 2, 3];
+numbers[3] = numbers;
+console.log(numbers); //  [1, 2, 3, Array(4)]...Array(4) infinity loop
+
+///////////////////////////////////////////////////////////////
+
+// Question 30
+console.log(!!null); // false
+console.log(!!""); // false
+console.log(!!0); // false
+console.log(!!1); // true
+
+///////////////////////////////////////////////////////////////
+
+// Question 32
+console.log([..."vinay"]); // ['v', 'i', 'n', 'a', 'y']
+
+///////////////////////////////////////////////////////////////
+
+// Question 37
+let data = 3 + 4 + "5";
+console.log(data); // 75
+console.log(typeof data); // string
+
+///////////////////////////////////////////////////////////////
+
+// Question 38
+console.log(typeof 3 + 4 + "5"); // number45
+console.log(3 + 4 + "5"); // 75
+
+///////////////////////////////////////////////////////////////
+
+// Question 39
+console.log(typeof (3 + 4 + +"5")); // number
+console.log(3 + 4 + +"5"); // 12
+
+///////////////////////////////////////////////////////////////
+
+// Question 40
+console.log([] == []); // false
+
+///////////////////////////////////////////////////////////////
+
+// Question 41
+let data = [1, 2, 3].map((num) => {
+  if (typeof num === "number") return;
+  return num * 2;
+});
+console.log(data); // [undefined, undefined, undefined]
+
+///////////////////////////////////////////////////////////////
+
+// Question 42
+// Pass By Reference
+const person = { name: "vinay" };
+function getInfo(member) {
+  member.name = "kumar";
+}
+getInfo(person);
+console.log(person); // {name: 'kumar'}
+
+///////////////////////////////////////////////////////////////
+
+// Question 43
+function Car() {
+  this.make = "tata";
+  return { make: "kia" };
+}
+const myCar = new Car();
+console.log(myCar.make); // kia
+
+///////////////////////////////////////////////////////////////
+
+// Question 44
+(() => {
+  let x = (y = 10);
+})();
+console.log(typeof x); // undefined
+
+///////////////////////////////////////////////////////////////
+
+// Question 45
+(() => {
+  let x = (y = 10);
+})();
+console.log(typeof y); // undefined
+console.log(y); // 10
+
+///////////////////////////////////////////////////////////////
+
+// Question 46
+(() => {
+  let x = 10;
+})();
+(() => {
+  let x = 10;
+})();
+console.log(typeof x); // undefined
+
+///////////////////////////////////////////////////////////////
+
+// Question 47
+(() => {
+  let x = (y = 10);
+})();
+(() => {
+  let x = (y = 20);
+})();
+console.log(y); // 20
+
+///////////////////////////////////////////////////////////////
+
+// Question 48
+let x = 100;
+(() => {
+  var x = 20;
+})();
+console.log(x); // 100
+
+function example() {
+  var x = 1;
+  let y = 2;
+  const z = 3;
+  if (true) {
+    var x = 4; // same variable as x above
+    let y = 5; // different variable than y above
+    const z = 6; // different variable than z above
+  }
+  console.log(x); // logs 4
+  console.log(y); // logs 2
+  console.log(z); // logs 3
+}
+example();
+
+///////////////////////////////////////////////////////////////
+
+// Question 49
+console.log(!true - true); // -1
+
+///////////////////////////////////////////////////////////////
+
+// Question 50
+console.log(true + +"10"); // 11
+`,
+    pythonCode: ``,
+  },
+  {
+    id: 38,
+    question: `38. Write a groupBy function to group users based on a property like name, age, id Dynamically change property ?`,
+    javaScriptCode: `const users = [
+  { id: 1, name: "Rahul", age: 30 },
+  { id: 7, name: "John", age: 30 },
+  { id: 3, name: "David", age: 50 },
+  { id: 4, name: "Abhi", age: 40 },
+  { id: 5, name: "Smith", age: 40 },
+];
+
+function groupBy(users, property) {
+  const grouped = {};
+  for (const user of users) {
+    const key = user[property];
+    if (!grouped[key]) {
+      grouped[key] = [];
+    }
+    grouped[key].push(user);
+  }
+  return grouped;
+}
+const groupedByAge = groupBy(users, "age");
+console.log(groupedByAge);
+
+ //Output:
+ {
+    30: [
+      { id: 1, name: "Rahul", age: 30 },
+      { id: 7, name: "John", age: 30 }
+    ],
+    50: [
+      { id: 3, name: "David", age: 50 }
+    ],
+    40: [
+      { id: 4, name: "Abhi", age: 40 },
+      { id: 5, name: "Smith", age: 40 }
+    ]
+  }`,
+    pythonCode: ``,
+  },
+  {
+    id: 39,
+    question: `39. Write a function to return sum of parameters for below with n numbers of parameters => sum(2, 3)(3, 4, 6)(4)...(n)();`,
+    javaScriptCode: `function sum(...args) {
+  let sum = args.reduce((total, num) => total + num, 0);
+
+  function innerSum(...innerArgs) {
+    if (innerArgs.length === 0) {
+      return sum;
+    }
+    sum += innerArgs.reduce((total, num) => total + num, 0);
+    return innerSum;
+  }
+  return innerSum;
+}
+
+console.log(sum(2, 3)(3, 4, 6)(4)()); // Output: 22
+
+the sum is calculated as follows:
+Initial sum: 2 + 3 = 5
+Next call: 5 + 3 + 4 + 6 = 18
+Next call: 18 + 4 = 22
+Final call: returns 22
+`,
+    pythonCode: ``,
+  },
 ];
 
 const ObjBluePrint = {
