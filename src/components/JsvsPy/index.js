@@ -1211,6 +1211,105 @@ console.log(!true - true); // -1
 
 // Question 50
 console.log(true + +"10"); // 11
+
+///////////////////////////////////////////////////////////////
+
+// Question 51
+function abc() {
+  var a = 19;
+  let b = 20;
+  const fun = function () {
+    let b = 30;
+    var a = 50;
+    console.log(b); // 30
+    console.log(a); // 50
+  };
+  console.log(a); // 19
+  console.log(b); // 20
+  fun();
+  console.log(a); // 19
+  console.log(b); // 20
+}
+abc();
+
+///////////////////////////////////////////////////////////////
+
+// Question 52
+function abc() {
+  var a = 19;
+  let b = 20;
+  const fun = () => {
+    let b = 30;
+    var a = 50;
+    console.log(b); // 30
+    console.log(a); // 50
+  };
+  console.log(a); // 19
+  console.log(b); // 20
+  fun();
+  console.log(a); // 19
+  console.log(b); // 20
+}
+abc();
+
+///////////////////////////////////////////////////////////////
+
+// Question 53
+function abc() {
+  var a = 19;
+  let b = 20;
+  console.log(a); // 19
+  console.log(b); // 20
+  {
+    let b = 30;
+    var a = 50;
+    console.log(b); // 30
+    console.log(a); // 50
+  }
+  console.log(a); // 50
+  console.log(b); // 20
+}
+abc();
+
+///////////////////////////////////////////////////////////////
+
+// Question 54
+function xyz() {
+  this.a = 5;
+  console.log(this.a); // 5
+}
+xyz();
+console.log(this.a); // undefined
+
+///////////////////////////////////////////////////////////////
+
+// Question 55
+function xyz() {
+  let a = 5;
+  console.log(this.a); // undefined
+}
+xyz();
+console.log(this.a); // undefined
+
+///////////////////////////////////////////////////////////////
+
+// Question 56
+const xyz = () => {
+  this.a = 5;
+  console.log(this.a); //5
+};
+xyz();
+console.log(this.a); // 5
+
+///////////////////////////////////////////////////////////////
+
+// Question 57
+const xyz = () => {
+  let a = 5;
+  console.log(this.a); // undefined
+};
+xyz();
+console.log(this.a); // undefined
 `,
     pythonCode: ``,
   },
