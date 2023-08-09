@@ -1310,6 +1310,50 @@ const xyz = () => {
 };
 xyz();
 console.log(this.a); // undefined
+
+///////////////////////////////////////////////////////////////
+
+// Question 58
+var myObject = {
+  foo: "bar",
+  func: function () {
+    var self = this;
+    console.log("outer func: this.foo = " + this.foo); // outer func: this.foo = bar
+    console.log("outer func: self.foo = " + self.foo); // outer func: self.foo = bar
+    (function () {
+      console.log("inner func: this.foo = " + this.foo); // inner func: this.foo = undefined
+      console.log("inner func: self.foo = " + self.foo); // inner func: self.foo = bar
+    })();
+  },
+};
+myObject.func();
+
+///////////////////////////////////////////////////////////////
+
+// Question 59
+var Output = (function(x){
+Delete X;
+return X;
+}
+)(0); 
+console.log(output) // undefined
+
+///////////////////////////////////////////////////////////////
+
+// Question 60
+var Output = (function(x){
+return X;
+}
+)(0); 
+console.log(output) // 0
+
+///////////////////////////////////////////////////////////////
+
+// Question 61
+const myArr = [1, 2, 3];
+const arrTwo = myArr.splice(0, 4).slice(0, 2);
+arrTwo[0] = 9;
+console.log(arrTwo); // [9,2]
 `,
     pythonCode: ``,
   },
