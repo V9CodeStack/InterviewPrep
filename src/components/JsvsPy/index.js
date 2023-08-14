@@ -885,8 +885,8 @@ console.log(removeDuplicates(obj));
     question: `37. Output of Below Code ?`,
     javaScriptCode: `// Question 1
 function fruit() {
-  console.log(name); // undefined
-  console.log(price); // Error
+  console.log(name); 
+  console.log(price); 
 
   var name = "apple";
   let price = 23;
@@ -897,28 +897,28 @@ fruit();
 
 // Question 2
 for (var i = 0; i < 3; i++) {
-  setTimeout(() => console.log(i), i); // 3 3 3
+  setTimeout(() => console.log(i), i); 
 }
 
 ///////////////////////////////////////////////////////////////
 
 // Question 3
 for (let i = 0; i < 3; i++) {
-  setTimeout(() => console.log(i), i); // 0 1 2
+  setTimeout(() => console.log(i), i); 
 }
 
 ///////////////////////////////////////////////////////////////
 
 // Question 4
 console.log(+true); // 1
-console.log(typeof +true); // Number
+console.log(typeof +true); 
 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 5
-console.log(!"vinay"); // false
-console.log(typeof "vinay"); // String
+console.log(!"vinay"); 
+console.log(typeof "vinay"); 
 
 ///////////////////////////////////////////////////////////////
 
@@ -927,10 +927,10 @@ let data = "size";
 const bird = {
   size: "small",
 };
-console.log(bird[data]); // small
-console.log(bird["size"]); // small
-console.log(bird.size); // small
-console.log(bird.data); // undefined
+console.log(bird[data]); 
+console.log(bird["size"]); 
+console.log(bird.size);
+console.log(bird.data); 
 
 
 ///////////////////////////////////////////////////////////////
@@ -940,47 +940,47 @@ let c = { name: "vinay" };
 let d;
 d = c;
 c.name = "kumar";
-console.log(d.name); // kumar
+console.log(d.name); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 8
 var x;
 var x = 10;
-console.log(x); //10
+console.log(x); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 9
 var x;
 let x = 10;
-console.log(x); // Error (Identifier 'x' has already been declared)
+console.log(x); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 11
 let a = 3;
 let b = new Number(3);
-console.log(a == b); // true
-console.log(a === b); // false
-console.log(typeof b); // Object
+console.log(a == b); 
+console.log(a === b); 
+console.log(typeof b);
 
 ///////////////////////////////////////////////////////////////
 
 // Question 12
 function fruit() {
-  console.log("woof!"); // woof!
+  console.log("woof!"); 
 }
 fruit.name = "apple";
-console.log(fruit()); // undefined
+console.log(fruit()); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 13
 let number = 0;
-console.log(number++); // 0
-console.log(++number); // 2
-console.log(number); // 2
+console.log(number++); 
+console.log(++number); 
+console.log(number); 
 
 ///////////////////////////////////////////////////////////////
 
@@ -988,7 +988,7 @@ console.log(number); // 2
 function getAge(...args) {
   console.log(typeof args);
 }
-getAge(21); // Object
+getAge(21); 
 
 ///////////////////////////////////////////////////////////////
 
@@ -998,20 +998,20 @@ function getAge() {
   age = 21;
   console.log(age);
 }
-getAge(); // Error (age is not defined)
+getAge(); // 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 16
 const sum = eval("10*10+5");
-console.log(sum); // 105
+console.log(sum); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 20
 for (let i = 1; i < 5; i++) {
   if (i === 3) continue;
-  console.log(i); // 1 2 4
+  console.log(i); 
 }
 
 // Question 21
@@ -1022,10 +1022,6 @@ bar();
 foo();
 baz();
 
-//outPut:
-first
-Third
-second
 
 ///////////////////////////////////////////////////////////////
 
@@ -1034,8 +1030,8 @@ const person = { name: "vinay" };
 function sayHi(age) {
   return "{this.name} is {age}";
 }
-console.log(sayHi.call(person, 21)); // vinay is 21
-console.log(sayHi.bind(person, 21)); // ƒ sayHi(age) { return "{this.name} is {age}";}
+console.log(sayHi.call(person, 21)); 
+console.log(sayHi.bind(person, 21));
 
 ///////////////////////////////////////////////////////////////
 
@@ -1043,7 +1039,7 @@ console.log(sayHi.bind(person, 21)); // ƒ sayHi(age) { return "{this.name} is {
 function sayHi() {
   return (() => 0)();
 }
-console.log(typeof sayHi()); // number
+console.log(typeof sayHi()); 
 
 ///////////////////////////////////////////////////////////////
 
@@ -1051,63 +1047,63 @@ console.log(typeof sayHi()); // number
 function sayHi() {
   return () => 0;
 }
-console.log(typeof sayHi()); // function
+console.log(typeof sayHi());
 
 ///////////////////////////////////////////////////////////////
 
 // Question 26
-console.log(typeof typeof 1); // string
+console.log(typeof typeof 1);
 
 ///////////////////////////////////////////////////////////////
 
 // Question 27
 const numbers = [1, 2, 3];
 numbers[9] = 11;
-console.log(numbers); // [1, 2, 3, empty × 6, 11]
+console.log(numbers); // 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 28
 const numbers = [1, 2, 3];
 numbers[3] = numbers;
-console.log(numbers); //  [1, 2, 3, Array(4)]...Array(4) infinity loop
+console.log(numbers); // 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 30
-console.log(!!null); // false
-console.log(!!""); // false
-console.log(!!0); // false
-console.log(!!1); // true
+console.log(!!null); 
+console.log(!!""); 
+console.log(!!0); 
+console.log(!!1); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 32
-console.log([..."vinay"]); // ['v', 'i', 'n', 'a', 'y']
+console.log([..."vinay"]); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 37
 let data = 3 + 4 + "5";
-console.log(data); // 75
-console.log(typeof data); // string
+console.log(data); 
+console.log(typeof data); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 38
-console.log(typeof 3 + 4 + "5"); // number45
-console.log(3 + 4 + "5"); // 75
+console.log(typeof 3 + 4 + "5"); 
+console.log(3 + 4 + "5"); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 39
-console.log(typeof (3 + 4 + +"5")); // number
-console.log(3 + 4 + +"5"); // 12
+console.log(typeof (3 + 4 + +"5"));
+console.log(3 + 4 + +"5"); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 40
-console.log([] == []); // false
+console.log([] == []); 
 
 ///////////////////////////////////////////////////////////////
 
@@ -1116,7 +1112,7 @@ let data = [1, 2, 3].map((num) => {
   if (typeof num === "number") return;
   return num * 2;
 });
-console.log(data); // [undefined, undefined, undefined]
+console.log(data); // 
 
 ///////////////////////////////////////////////////////////////
 
@@ -1127,7 +1123,7 @@ function getInfo(member) {
   member.name = "kumar";
 }
 getInfo(person);
-console.log(person); // {name: 'kumar'}
+console.log(person);
 
 ///////////////////////////////////////////////////////////////
 
@@ -1137,7 +1133,7 @@ function Car() {
   return { make: "kia" };
 }
 const myCar = new Car();
-console.log(myCar.make); // kia
+console.log(myCar.make);
 
 ///////////////////////////////////////////////////////////////
 
@@ -1145,7 +1141,7 @@ console.log(myCar.make); // kia
 (() => {
   let x = (y = 10);
 })();
-console.log(typeof x); // undefined
+console.log(typeof x); 
 
 ///////////////////////////////////////////////////////////////
 
@@ -1153,8 +1149,8 @@ console.log(typeof x); // undefined
 (() => {
   let x = (y = 10);
 })();
-console.log(typeof y); // undefined
-console.log(y); // 10
+console.log(typeof y); 
+console.log(y); 
 
 ///////////////////////////////////////////////////////////////
 
@@ -1165,8 +1161,7 @@ console.log(y); // 10
 (() => {
   let x = 10;
 })();
-console.log(typeof x); // undefined
-
+console.log(typeof x); 
 ///////////////////////////////////////////////////////////////
 
 // Question 47
@@ -1176,7 +1171,7 @@ console.log(typeof x); // undefined
 (() => {
   let x = (y = 20);
 })();
-console.log(y); // 20
+console.log(y); 
 
 ///////////////////////////////////////////////////////////////
 
@@ -1185,7 +1180,7 @@ let x = 100;
 (() => {
   var x = 20;
 })();
-console.log(x); // 100
+console.log(x); 
 
 function example() {
   var x = 1;
@@ -1196,21 +1191,21 @@ function example() {
     let y = 5; // different variable than y above
     const z = 6; // different variable than z above
   }
-  console.log(x); // logs 4
-  console.log(y); // logs 2
-  console.log(z); // logs 3
+  console.log(x);
+  console.log(y); 
+  console.log(z); 
 }
 example();
 
 ///////////////////////////////////////////////////////////////
 
 // Question 49
-console.log(!true - true); // -1
+console.log(!true - true); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 50
-console.log(true + +"10"); // 11
+console.log(true + +"10");
 
 ///////////////////////////////////////////////////////////////
 
@@ -1221,14 +1216,14 @@ function abc() {
   const fun = function () {
     let b = 30;
     var a = 50;
-    console.log(b); // 30
-    console.log(a); // 50
+    console.log(b); 
+    console.log(a);
   };
-  console.log(a); // 19
-  console.log(b); // 20
+  console.log(a); 
+  console.log(b);
   fun();
-  console.log(a); // 19
-  console.log(b); // 20
+  console.log(a); 
+  console.log(b); 
 }
 abc();
 
@@ -1241,14 +1236,14 @@ function abc() {
   const fun = () => {
     let b = 30;
     var a = 50;
-    console.log(b); // 30
-    console.log(a); // 50
+    console.log(b); 
+    console.log(a); 
   };
-  console.log(a); // 19
-  console.log(b); // 20
+  console.log(a); 
+  console.log(b);
   fun();
-  console.log(a); // 19
-  console.log(b); // 20
+  console.log(a); 
+  console.log(b); 
 }
 abc();
 
@@ -1258,16 +1253,16 @@ abc();
 function abc() {
   var a = 19;
   let b = 20;
-  console.log(a); // 19
-  console.log(b); // 20
+  console.log(a);
+  console.log(b); 
   {
     let b = 30;
     var a = 50;
-    console.log(b); // 30
-    console.log(a); // 50
+    console.log(b); 
+    console.log(a); 
   }
-  console.log(a); // 50
-  console.log(b); // 20
+  console.log(a);
+  console.log(b); 
 }
 abc();
 
@@ -1276,40 +1271,40 @@ abc();
 // Question 54
 function xyz() {
   this.a = 5;
-  console.log(this.a); // 5
+  console.log(this.a); 
 }
 xyz();
-console.log(this.a); // undefined
+console.log(this.a); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 55
 function xyz() {
   let a = 5;
-  console.log(this.a); // undefined
+  console.log(this.a); 
 }
 xyz();
-console.log(this.a); // undefined
+console.log(this.a); 
 
 ///////////////////////////////////////////////////////////////
 
 // Question 56
 const xyz = () => {
   this.a = 5;
-  console.log(this.a); //5
+  console.log(this.a); 
 };
 xyz();
-console.log(this.a); // 5
+console.log(this.a);
 
 ///////////////////////////////////////////////////////////////
 
 // Question 57
 const xyz = () => {
   let a = 5;
-  console.log(this.a); // undefined
+  console.log(this.a);
 };
 xyz();
-console.log(this.a); // undefined
+console.log(this.a); 
 
 ///////////////////////////////////////////////////////////////
 
@@ -1318,11 +1313,11 @@ var myObject = {
   foo: "bar",
   func: function () {
     var self = this;
-    console.log("outer func: this.foo = " + this.foo); // outer func: this.foo = bar
-    console.log("outer func: self.foo = " + self.foo); // outer func: self.foo = bar
+    console.log("outer func: this.foo = " + this.foo); 
+    console.log("outer func: self.foo = " + self.foo); 
     (function () {
-      console.log("inner func: this.foo = " + this.foo); // inner func: this.foo = undefined
-      console.log("inner func: self.foo = " + self.foo); // inner func: self.foo = bar
+      console.log("inner func: this.foo = " + this.foo);
+      console.log("inner func: self.foo = " + self.foo); 
     })();
   },
 };
@@ -1336,7 +1331,7 @@ Delete X;
 return X;
 }
 )(0); 
-console.log(output) // undefined
+console.log(output) 
 
 ///////////////////////////////////////////////////////////////
 
@@ -1345,7 +1340,7 @@ var Output = (function(x){
 return X;
 }
 )(0); 
-console.log(output) // 0
+console.log(output) 
 
 ///////////////////////////////////////////////////////////////
 
@@ -1353,7 +1348,7 @@ console.log(output) // 0
 const myArr = [1, 2, 3];
 const arrTwo = myArr.splice(0, 4).slice(0, 2);
 arrTwo[0] = 9;
-console.log(arrTwo); // [9,2]
+console.log(arrTwo);
 `,
     pythonCode: ``,
   },

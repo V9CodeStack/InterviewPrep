@@ -183,6 +183,38 @@ const htmlobj = [
     code: ``,
     video: ``,
   },
+  {
+    id: 15,
+    question: `15. what is box model in css ? `,
+    answer: [
+      `The CSS box model is a fundamental concept that describes how elements in HTML are structured as rectangular boxes. Each box consists of content, padding, border, and margin, all of which contribute to the element's overall size and spacing.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 16,
+    question: `16. Difference between flex box and grid ?`,
+    answer: [
+      `Flexbox:`,
+      `One-dimensional layout system (either row or column).`,
+      `Designed for arranging elements within a container along a single axis.`,
+      `Grid:`,
+      `Two-dimensional layout system (rows and columns).`,
+      `Designed for creating complex layouts by defining rows and columns.`,
+    ],
+    code: ``,
+    video: ``,
+  },
+  {
+    id: 17,
+    question: `17. what is use Semantic tags ?`,
+    answer: [
+      `Semantic tags in HTML are used to give meaning to the structure and content of a web page. They convey the purpose and significance of different parts of the content to both browsers and developers. Semantic tags improve accessibility, SEO, and maintainability by providing a clearer structure for the content.`,
+    ],
+    code: ``,
+    video: ``,
+  },
 ];
 
 const ObjBluePrint = {
